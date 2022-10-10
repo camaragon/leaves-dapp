@@ -1,24 +1,22 @@
-import logo from "./logo.svg";
-import "./App.css";
+import {
+  LeafChallenge,
+  Homepage,
+  Redacted,
+  TreeFund,
+  Welcome,
+  Methodology,
+} from "./Components";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          10,000 Leaves
-        </a>
-      </header>
-    </div>
+    <main>
+      <Homepage />
+      <Welcome />
+      <TreeFund />
+      <LeafChallenge />
+      <Redacted />
+      <Methodology />
+    </main>
   );
 }
 
