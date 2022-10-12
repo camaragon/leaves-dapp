@@ -55,13 +55,14 @@ export const FAQ = () => {
 
   return (
     <Stack
+      id="faq"
       component="section"
       height="100vh"
       backgroundColor="primary.darkGreen"
       textAlign="center"
       spacing={3}
     >
-      <Typography item variant="h2" margin="3rem 0 0 0">
+      <Typography item variant="h2" margin="3rem 0 3rem 0">
         FAQ
       </Typography>
       <div className="faqs">
