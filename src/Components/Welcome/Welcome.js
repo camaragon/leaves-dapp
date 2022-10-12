@@ -3,7 +3,7 @@ import ImageIcon from "@mui/icons-material/Image";
 
 export const Welcome = () => {
   return (
-    <Grid component="section" container height="75vh">
+    <Grid id="welcome" component="section" container height="75vh">
       <Grid
         item
         xs={12}

@@ -3,7 +3,7 @@ import { Link } from "@mui/material";
 
 export const HomepageContainer = styled.section`
   display: grid;
-  grid: 1fr 5fr / 1fr;
+  grid: 1fr 6fr / 1fr;
   height: 100vh;
   background-color: #0ca789;
 `;
@@ -11,6 +11,8 @@ export const HomepageContainer = styled.section`
 export const HeaderContainer = styled.div`
   display: grid;
   grid: 1fr / 1fr 3fr;
+  backdrop-filter: blur(10px);
+  background-color: transparent;
 `;
 
 export const MintContainer = styled.div`

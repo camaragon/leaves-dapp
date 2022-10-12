@@ -4,6 +4,7 @@ import treeFund from "../../Images/tree-fund.png";
 export const TreeFund = () => {
   return (
     <Grid
+      id="tree-fund"
       component="section"
       container
       height="100vh"

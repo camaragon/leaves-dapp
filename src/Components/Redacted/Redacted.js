@@ -3,6 +3,7 @@ import { Grid, Typography, List, ListItem } from "@mui/material";
 export const Redacted = () => {
   return (
     <section
+      id="redacted"
       style={{
         display: "grid",
         grid: "1fr 4fr / 1fr",

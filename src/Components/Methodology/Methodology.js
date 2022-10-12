@@ -5,6 +5,7 @@ import tropicalLeaf from "../../Images/tropical-leaf.png";
 export const Methodology = () => {
   return (
     <section
+      id="methodology"
       style={{
         display: "grid",
         grid: "1fr 3fr / 1fr",

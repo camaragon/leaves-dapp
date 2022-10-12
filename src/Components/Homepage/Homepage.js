@@ -23,12 +23,12 @@ export const Homepage = () => {
           margin="2rem 2rem 0 0"
           spacing={8}
         >
-          <Styled.NavLink>Welcome</Styled.NavLink>
-          <Styled.NavLink>Tree Fund</Styled.NavLink>
-          <Styled.NavLink>Leaf Challenge</Styled.NavLink>
-          <Styled.NavLink>[redacted]</Styled.NavLink>
-          <Styled.NavLink>Methodology</Styled.NavLink>
-          <Styled.NavLink>FAQ</Styled.NavLink>
+          <Styled.NavLink href="#welcome">Welcome</Styled.NavLink>
+          <Styled.NavLink href="#tree-fund">Tree Fund</Styled.NavLink>
+          <Styled.NavLink href="#leaf-challenge">Leaf Challenge</Styled.NavLink>
+          <Styled.NavLink href="#redacted">[redacted]</Styled.NavLink>
+          <Styled.NavLink href="#methodology">Methodology</Styled.NavLink>
+          <Styled.NavLink href="#faq">FAQ</Styled.NavLink>
 
           {/* <Typography variant="h6" fontWeight="bold">
             Trees

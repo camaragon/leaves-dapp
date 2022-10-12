@@ -2,7 +2,7 @@ import { Grid, List, ListItem, Typography } from "@mui/material";
 
 export const LeafChallenge = () => {
   return (
-    <Grid component="section" container height="75vh">
+    <Grid id="leaf-challenge" component="section" container height="75vh">
       <Grid
         item
         xs={6}
