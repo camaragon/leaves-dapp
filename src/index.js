@@ -13,6 +13,9 @@ const theme = createTheme({
       darkGreen: "#6DAB7B",
     },
   },
+  typography: {
+    fontFamily: ["EB Garamond"],
+  },
 });
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

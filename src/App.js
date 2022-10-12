@@ -5,6 +5,8 @@ import {
   TreeFund,
   Welcome,
   Methodology,
+  FAQ,
+  Footer,
 } from "./Components";
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
       <LeafChallenge />
       <Redacted />
       <Methodology />
+      <FAQ />
+      <Footer />
     </main>
   );
 }
