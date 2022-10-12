@@ -1,3 +1,4 @@
+export * from "./Header";
 export * from "./Homepage";
 export * from "./FAQ";
 export * from "./Footer";

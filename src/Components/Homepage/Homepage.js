@@ -1,11 +1,10 @@
 import { Button, Grid, Link, Stack, Typography } from "@mui/material";
 import * as Styled from "./Homepage.styled";
-import leafLogo from "../../Images/leaf-logo.png";
 
 export const Homepage = () => {
   return (
     <Styled.HomepageContainer>
-      <Styled.HeaderContainer>
+      {/* <Styled.HeaderContainer>
         <img
           src={leafLogo}
           alt="leaf logo"
@@ -29,18 +28,8 @@ export const Homepage = () => {
           <Styled.NavLink>[redacted]</Styled.NavLink>
           <Styled.NavLink>Methodology</Styled.NavLink>
           <Styled.NavLink>FAQ</Styled.NavLink>
-
-          {/* <Typography variant="h6" fontWeight="bold">
-            Trees
-          </Typography>
-          <Typography variant="h6" fontWeight="bold">
-            Leaves
-          </Typography>
-          <Typography variant="h6" fontWeight="bold">
-            FAQ
-          </Typography> */}
         </Stack>
-      </Styled.HeaderContainer>
+      </Styled.HeaderContainer> */}
       <Styled.MintContainer alignItems="center" justifyContent="center">
         <Button
           variant="contained"

@@ -1,4 +1,5 @@
 import {
+  Header,
   LeafChallenge,
   Homepage,
   Redacted,
@@ -12,6 +13,7 @@ import {
 function App() {
   return (
     <main>
+      <Header />
       <Homepage />
       <Welcome />
       <TreeFund />
