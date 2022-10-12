@@ -1,4 +1,4 @@
-import { Button, Grid, Stack, Typography } from "@mui/material";
+import { Button, Grid, Link, Stack, Typography } from "@mui/material";
 import * as Styled from "./Homepage.styled";
 import leafLogo from "../../Images/leaf-logo.png";
 
@@ -14,13 +14,23 @@ export const Homepage = () => {
           style={{ margin: "2rem 0 0 2rem" }}
         />
         <Stack
+          component="nav"
           direction="row"
-          justifyContent="space-between"
+          // justifyContent="space-between"
+          height="20%"
           width="40%"
-          justifySelf="end"
+          // justifySelf="center"
           margin="2rem 2rem 0 0"
+          spacing={8}
         >
-          <Typography variant="h6" fontWeight="bold">
+          <Styled.NavLink>Welcome</Styled.NavLink>
+          <Styled.NavLink>Tree Fund</Styled.NavLink>
+          <Styled.NavLink>Leaf Challenge</Styled.NavLink>
+          <Styled.NavLink>[redacted]</Styled.NavLink>
+          <Styled.NavLink>Methodology</Styled.NavLink>
+          <Styled.NavLink>FAQ</Styled.NavLink>
+
+          {/* <Typography variant="h6" fontWeight="bold">
             Trees
           </Typography>
           <Typography variant="h6" fontWeight="bold">
@@ -28,7 +38,7 @@ export const Homepage = () => {
           </Typography>
           <Typography variant="h6" fontWeight="bold">
             FAQ
-          </Typography>
+          </Typography> */}
         </Stack>
       </Styled.HeaderContainer>
       <Styled.MintContainer alignItems="center" justifyContent="center">

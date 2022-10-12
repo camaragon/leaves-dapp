@@ -61,7 +61,7 @@ export const FAQ = () => {
       textAlign="center"
       spacing={3}
     >
-      <Typography item variant="h2">
+      <Typography item variant="h2" margin="3rem 0 0 0">
         FAQ
       </Typography>
       <div className="faqs">

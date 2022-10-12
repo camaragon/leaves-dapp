@@ -12,6 +12,9 @@ const theme = createTheme({
       green: "#8ED14E",
       darkGreen: "#6DAB7B",
     },
+    common: {
+      white: "#FFFFFF",
+    },
   },
   typography: {
     fontFamily: ["EB Garamond"],
