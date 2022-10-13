@@ -17,7 +17,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: ["EB Garamond"],
+    fontFamily: ["Nixie One", "EB Garamond"].join(","),
   },
 });
 

@@ -1,0 +1,16 @@
+.homepage-background {
+  animation: moveBackgroundImage 30s linear 1s infinite;
+}
+
+@keyframes moveBackgroundImage {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  30% {
+    transform: translate3d(-20rem, 0, 0);
+  }
+  75% {
+    transform: translate3d(20rem, 0, 0);
+  }
+}

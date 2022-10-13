@@ -13,7 +13,7 @@ export const Redacted = () => {
         backgroundColor: "#6DAB7B",
       }}
     >
-      <Typography alignSelf="center" justifySelf="center" variant="h3">
+      <Typography alignSelf="end" justifySelf="center" variant="h3">
         [redacted]
       </Typography>
       <Grid container>

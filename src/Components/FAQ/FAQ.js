@@ -5,36 +5,37 @@ import "./FAQ.css";
 export const FAQ = () => {
   const [faqs, setFaqs] = useState([
     {
-      question: "What are Unpiloted NFTs?",
+      question: "What are LEAVES?",
       answer:
-        "Set of 2,222 aircraft NFTs that will grow into a 10,000 collection through a series of 3 generations.",
+        "10,000 LEAVES is the Prelude to our Web3 adventure. These LEAVES were hand drawn then altered with keywords to generate the backgrounds through AI interpretation. Collecting one leaf grants holders a guaranteed mint for our main drop in November. ",
       open: false,
     },
     {
       question: "When is the launch?",
-      answer: "This is a stealth drop.",
+      answer:
+        "The mint will be 10/21 in the morning when leaves are most crisp.",
       open: false,
     },
     {
       question: "How many are available?",
-      answer: "2,222 NFTs will be available in the first mint.",
+      answer: "10,000 LEAVES will be available.",
       open: false,
     },
     {
       question: "What will be the mint price of a NFT?",
-      answer: "The mint price per NFT will be 0.08 ETH.",
+      answer:
+        "As this collection is the prelude to our main drop in November, LEAVES will cost 0.03 Eth. Owning a leaf will reduce the mint price of our main drop by 0.03 Eth as well held during the presale 3 days earlier.",
       open: false,
     },
     {
-      question: "How many can I mint per transaction? Per wallet?",
-      answer:
-        "Each individual can mint 10 per transaction with no limits per wallet.",
+      question: "Minting Limits?",
+      answer: "Wallets will be limited to minting 5 LEAVES per transaction.",
       open: false,
     },
     {
-      question: "How can I join the whitelist?",
+      question: "What are Gate Keepers?",
       answer:
-        "Whitelist access will be granted to individual holders based on how active they are in the community. There will be a reserved number of spots for whitelist access.",
+        "Gate Keepers is the title granted to our most active and supportive members of the community. When we succeed, we want our Gate Keepers to enjoy some of the success as well. The 250 strongest supporters are granted this title. The list will be reevaluated on a monthly basis but during the month a holder is a Gate Keeper, they are granted increased voting power for the Tree Fund, free mints to our drop, share of all secondary sale, access to the Founder’s Fund.",
       open: false,
     },
   ]);
@@ -60,9 +61,9 @@ export const FAQ = () => {
       height="100vh"
       backgroundColor="primary.darkGreen"
       textAlign="center"
-      spacing={3}
+      spacing={8}
     >
-      <Typography item variant="h2" margin="3rem 0 3rem 0">
+      <Typography item variant="h2" margin="7rem 0 0 0">
         FAQ
       </Typography>
       <div className="faqs">

@@ -12,9 +12,10 @@ export const Methodology = () => {
         alignItems: "center",
         justifyItems: "center",
         height: "100vh",
+        backgroundColor: "#0CA789",
       }}
     >
-      <Stack alignItems="center" spacing={3}>
+      <Stack alignSelf="end" alignItems="center" spacing={3}>
         <Typography variant="h3">Methodology</Typography>
         <Typography fontWeight="bold">From Sketch to Art with AI</Typography>
       </Stack>

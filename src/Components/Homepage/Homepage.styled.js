@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const HomepageContainer = styled.section`
-  display: grid;
-  grid: 1fr / 1fr;
+  display: flex;
+  align-items: end;
+  justify-content: center;
   height: 100vh;
   background-color: #0ca789;
 `;
