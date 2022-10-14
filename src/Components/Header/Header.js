@@ -1,113 +1,79 @@
 import leafLogo from "../../Images/green-leaf-logo.png";
 import { Stack, Button } from "@mui/material";
 import * as Styled from "./Header.styled";
-import { useEffect, useState } from "react";
 import twitterIcon from "../../Images/twitter.svg";
 import openseaIcon from "../../Images/opensea.svg";
+import "./Header.css";
 
 export const Header = () => {
-  const [scrollPosition, setScrollPosition] = useState(0);
+  const highlightViewportSectionLink = () => {
+    const sectionsList = document.querySelectorAll("section");
+    sectionsList.forEach((section, index) => {
+      /* does not include the first section */
+      if (index > 0) {
+        /* coordinates of the section */
+        const coord = section.getBoundingClientRect();
 
-  const handleScroll = () => {
-    const position = window.pageYOffset;
-    setScrollPosition(position);
+        const navLinks = document.querySelectorAll(`nav > a`);
+
+        const relevantLink = navLinks[index - 1];
+
+        const addActiveSessionInfo = () => {
+          relevantLink.classList.add("active-link");
+        };
+
+        const removeActiveSessionInfo = () => {
+          relevantLink.classList.remove("active-link");
+        };
+
+        if (coord.top < window.innerHeight / 2 && coord.top > 0) {
+          addActiveSessionInfo();
+        } else if (coord.top > window.innerHeight / 2) {
+          removeActiveSessionInfo();
+        } else if (coord.bottom > window.innerHeight / 2) {
+          addActiveSessionInfo();
+        } else if (coord.bottom < window.innerHeight / 2 && coord.bottom > 0) {
+          removeActiveSessionInfo();
+        }
+      }
+    });
   };
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  console.log(scrollPosition);
+  highlightViewportSectionLink();
+  window.addEventListener("scroll", highlightViewportSectionLink);
 
   return (
     <Styled.HeaderContainer>
       <img
         src={leafLogo}
         alt="leaf logo"
-        height="100rem"
-        width="100rem"
-        style={{ margin: "0 0 0 4rem", transform: "rotate(270deg)" }}
+        height="80rem"
+        width="80rem"
+        style={{ margin: "0.5rem 0 0 4rem", transform: "rotate(270deg)" }}
       />
       <Stack
         component="nav"
         direction="row"
-        height="15%"
+        height="20%"
         margin="2rem 0 0 0"
         spacing={5}
       >
-        <Styled.NavLink
-          backgroundColor={
-            scrollPosition > 300 && scrollPosition < 1000
-              ? "rgb(142, 209, 78)"
-              : "rgba(255, 252, 237, 0.2)"
-          }
-          href="#welcome"
-        >
+        <Styled.NavLink className="nav-link" href="#welcome">
           Welcome
         </Styled.NavLink>
-        <Styled.NavLink
-          backgroundColor={
-            scrollPosition > 1000 && scrollPosition < 1600
-              ? "rgb(142, 209, 78)"
-              : "rgba(255, 252, 237, 0.2)"
-          }
-          href="#leaf-challenge"
-        >
+        <Styled.NavLink className="nav-link" href="#leaf-challenge">
           Leaf Challenge
         </Styled.NavLink>
-        <Styled.NavLink
-          backgroundColor={
-            scrollPosition > 1600 && scrollPosition < 2300
-              ? "rgb(142, 209, 78)"
-              : "rgba(255, 252, 237, 0.2)"
-          }
-          href="#tree-fund"
-        >
+        <Styled.NavLink className="nav-link" href="#tree-fund">
           Tree Fund
         </Styled.NavLink>
-        {/* <Styled.NavLink
-          backgroundColor={
-            scrollPosition > 2800 && scrollPosition < 3800
-              ? "rgb(142, 209, 78)"
-              : "rgba(255, 252, 237, 0.2)"
-          }
-          href="#redacted"
-        >
-          [redacted]
-        </Styled.NavLink>
-        <Styled.NavLink
-          backgroundColor={
-            scrollPosition > 3800 && scrollPosition < 4700
-              ? "rgb(142, 209, 78)"
-              : "rgba(255, 252, 237, 0.2)"
-          }
-          href="#methodology"
-        >
-          Methodology
-        </Styled.NavLink> */}
-        <Styled.NavLink
-          backgroundColor={
-            scrollPosition > 2300
-              ? "rgb(142, 209, 78)"
-              : "rgba(255, 252, 237, 0.2)"
-          }
-          href="#faq"
-        >
+        <Styled.NavLink className="nav-link" href="#faq">
           FAQ
         </Styled.NavLink>
         <Styled.IconLink
           target="_blank"
           href="https://twitter.com/_10000_LEAVES_"
           backgroundColor="rgba(255, 252, 237, 0.2)"
-          // sx={{
-          //   "&:hover": {
-          //     color: "white",
-          //   },
-          // }}
         >
           <img height="23rem" src={twitterIcon} />
         </Styled.IconLink>

@@ -12,10 +12,10 @@ export const HeaderContainer = styled.header`
   background-color: transparent;
 `;
 
-export const NavLink = styled(Link)`
+export const NavLink = styled.a`
   && {
     color: #ffffff;
-    // background-color: rgba(255, 252, 237, 0.2);
+    background-color: rgba(255, 252, 237, 0.2);
     padding: 0.5rem 1rem 2.25rem 1rem;
     white-space: nowrap;
     font-size: 1.25em;
