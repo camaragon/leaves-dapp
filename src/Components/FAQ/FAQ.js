@@ -61,9 +61,9 @@ export const FAQ = () => {
       height="100vh"
       backgroundColor="primary.darkGreen"
       textAlign="center"
-      spacing={8}
+      spacing={6}
     >
-      <Typography item variant="h2" margin="7rem 0 0 0">
+      <Typography item variant="h2" margin="6rem 0 0 0" fontWeight="900">
         FAQ
       </Typography>
       <div className="faqs">

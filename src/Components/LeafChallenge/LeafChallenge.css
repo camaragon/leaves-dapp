@@ -1,0 +1,23 @@
+.underground-background {
+  animation: moveBackgroundImage 40s linear 1s infinite;
+  opacity: 0.5;
+}
+
+.leaf-images:hover {
+  height: 15rem;
+  width: 15rem;
+  transition: 0.15s ease-in-out;
+}
+
+@keyframes moveBackgroundImage {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  30% {
+    transform: translate3d(-50rem, 0, 0);
+  }
+  75% {
+    transform: translate3d(-10rem, 0, 0);
+  }
+}

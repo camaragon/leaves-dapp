@@ -1,8 +1,8 @@
 .homepage-background {
-  animation: moveBackgroundImage 30s linear 1s infinite;
+  animation: moveHomepageImage 30s linear 1s infinite;
 }
 
-@keyframes moveBackgroundImage {
+@keyframes moveHomepageImage {
   0%,
   100% {
     transform: translate3d(0, 0, 0);

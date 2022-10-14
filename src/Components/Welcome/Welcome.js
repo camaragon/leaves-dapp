@@ -1,14 +1,13 @@
 import { Grid, Typography, Stack, Box } from "@mui/material";
 import ImageIcon from "@mui/icons-material/Image";
 import goldLeaf from "../../Images/gold-leaf.webp";
-import beachLeaf from "../../Images/beac-leaf.webp";
+import leafSketch from "../../Images/sketch-leaf.png";
 import "../../index.css";
 import * as Styled from "./Welcome.styled";
 
 export const Welcome = () => {
   return (
     <Grid
-      id="welcome"
       component="section"
       container
       height="75vh"
@@ -34,14 +33,15 @@ export const Welcome = () => {
         justifyItems="center"
         textAlign="center"
       >
-        <Stack alignItems="center" justifySelf="end" spacing={1} width="30rem">
+        <Stack alignItems="center" justifySelf="end" spacing={1} width="25rem">
           <img
-            src={goldLeaf}
+            src={leafSketch}
             height="225rem"
             width="225rem"
             style={{ borderRadius: "7rem", margin: "0 0 3rem 0" }}
+            alt="a gold leaf"
           />
-          <Typography variant="h4">Started with a single sketch</Typography>
+          <Typography variant="h4">Started with a sketch</Typography>
           <Typography fontWeight="bold">
             Our NFTs started from a single sketch
           </Typography>
@@ -75,13 +75,14 @@ export const Welcome = () => {
           alignItems="center"
           justifySelf="start"
           spacing={1}
-          width="30rem"
+          width="25rem"
         >
           <img
-            src={beachLeaf}
+            src={goldLeaf}
             height="225rem"
             width="225rem"
             style={{ borderRadius: "7rem", margin: "0 0 3rem 0" }}
+            alt="a beach leaf"
           />
           <Typography variant="h4">AI Interpretation</Typography>
           <Typography fontWeight="bold">

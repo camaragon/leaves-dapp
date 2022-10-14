@@ -1,4 +1,4 @@
-import { Button, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import * as Styled from "./Homepage.styled";
 import tree from "../../Images/background.png";
 import "./Homepage.css";
@@ -14,6 +14,7 @@ export const Homepage = () => {
         style={{ height: "100%" }}
       />
       <Typography
+        id="welcome"
         variant="h1"
         sx={{
           position: "absolute",
