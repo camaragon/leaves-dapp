@@ -2,11 +2,8 @@ import leafLogo from "../../Images/green-leaf-logo.png";
 import { Stack, Button } from "@mui/material";
 import * as Styled from "./Header.styled";
 import { useEffect, useState } from "react";
-import { ScoreOutlined } from "@mui/icons-material";
 import twitterIcon from "../../Images/twitter.svg";
-import TwitterIcon from "@mui/icons-material/Twitter";
 import openseaIcon from "../../Images/opensea.svg";
-import { Link as RouterLink } from "react-router-dom";
 
 export const Header = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -24,6 +21,8 @@ export const Header = () => {
     };
   }, []);
 
+  console.log(scrollPosition);
+
   return (
     <Styled.HeaderContainer>
       <img
@@ -31,18 +30,18 @@ export const Header = () => {
         alt="leaf logo"
         height="100rem"
         width="100rem"
-        style={{ margin: "0 0 0 4rem" }}
+        style={{ margin: "0 0 0 4rem", transform: "rotate(270deg)" }}
       />
       <Stack
         component="nav"
         direction="row"
-        height="20%"
+        height="15%"
         margin="2rem 0 0 0"
         spacing={5}
       >
         <Styled.NavLink
           backgroundColor={
-            scrollPosition > 500 && scrollPosition < 1200
+            scrollPosition > 300 && scrollPosition < 1000
               ? "rgb(142, 209, 78)"
               : "rgba(255, 252, 237, 0.2)"
           }
@@ -52,17 +51,7 @@ export const Header = () => {
         </Styled.NavLink>
         <Styled.NavLink
           backgroundColor={
-            scrollPosition > 1200 && scrollPosition < 2100
-              ? "rgb(142, 209, 78)"
-              : "rgba(255, 252, 237, 0.2)"
-          }
-          href="#tree-fund"
-        >
-          Tree Fund
-        </Styled.NavLink>
-        <Styled.NavLink
-          backgroundColor={
-            scrollPosition > 2100 && scrollPosition < 2800
+            scrollPosition > 1000 && scrollPosition < 1600
               ? "rgb(142, 209, 78)"
               : "rgba(255, 252, 237, 0.2)"
           }
@@ -71,6 +60,16 @@ export const Header = () => {
           Leaf Challenge
         </Styled.NavLink>
         <Styled.NavLink
+          backgroundColor={
+            scrollPosition > 1600 && scrollPosition < 2300
+              ? "rgb(142, 209, 78)"
+              : "rgba(255, 252, 237, 0.2)"
+          }
+          href="#tree-fund"
+        >
+          Tree Fund
+        </Styled.NavLink>
+        {/* <Styled.NavLink
           backgroundColor={
             scrollPosition > 2800 && scrollPosition < 3800
               ? "rgb(142, 209, 78)"
@@ -89,10 +88,10 @@ export const Header = () => {
           href="#methodology"
         >
           Methodology
-        </Styled.NavLink>
+        </Styled.NavLink> */}
         <Styled.NavLink
           backgroundColor={
-            scrollPosition > 4700
+            scrollPosition > 2300
               ? "rgb(142, 209, 78)"
               : "rgba(255, 252, 237, 0.2)"
           }

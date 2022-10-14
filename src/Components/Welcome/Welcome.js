@@ -51,12 +51,12 @@ export const Welcome = () => {
           AI generated NFTs based on our sketch
         </Typography>
       </Grid>
-      <img
+      {/* <img
         src={swirlLine}
         width="100%"
         height="50%"
         style={{ position: "relative", top: "12rem" }}
-      />
+      /> */}
     </Grid>
   );
 };

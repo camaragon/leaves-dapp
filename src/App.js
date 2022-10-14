@@ -16,10 +16,10 @@ function App() {
       <Header />
       <Homepage />
       <Welcome />
-      <TreeFund />
       <LeafChallenge />
-      <Redacted />
-      <Methodology />
+      <TreeFund />
+      {/* <Redacted /> */}
+      {/* <Methodology /> */}
       <FAQ />
       <Footer />
     </main>

@@ -8,7 +8,7 @@ export const TreeFund = () => {
       component="section"
       container
       height="100vh"
-      backgroundColor="primary.darkGreen"
+      backgroundColor="primary.main"
     >
       <Grid
         item
@@ -20,7 +20,7 @@ export const TreeFund = () => {
         <img
           src={treeFund}
           alt="a cartoonish gold glowing tree with leaves"
-          height={"500rem"}
+          height="500rem"
         />
       </Grid>
       <Grid

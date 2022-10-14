@@ -9,8 +9,8 @@ export const LeafChallenge = () => {
       id="leaf-challenge"
       component="section"
       container
-      height="75vh"
-      backgroundColor="primary.main"
+      height="100vh"
+      backgroundColor="primary.darkGreen"
     >
       <Grid
         item
