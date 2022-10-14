@@ -49,14 +49,14 @@ export const Header = () => {
         alt="leaf logo"
         height="80rem"
         width="80rem"
-        style={{ margin: "0.5rem 0 0 4rem", transform: "rotate(270deg)" }}
+        style={{ margin: "0.5rem 0 0 3rem", transform: "rotate(270deg)" }}
       />
       <Stack
         component="nav"
         direction="row"
         height="20%"
-        margin="2rem 0 0 0"
-        spacing={5}
+        margin="2rem 0 0 3rem"
+        spacing={6}
       >
         <Styled.NavLink className="nav-link" href="#welcome">
           Welcome
@@ -87,6 +87,7 @@ export const Header = () => {
       </Stack>
       <Button
         variant="contained"
+        disabled
         sx={{
           backgroundColor: "#8ED14E",
           width: "10rem",

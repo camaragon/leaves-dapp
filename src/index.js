@@ -11,13 +11,14 @@ const theme = createTheme({
       main: "#0CA789",
       green: "#8ED14E",
       darkGreen: "#6DAB7B",
+      gold: "#FEEB66",
     },
     common: {
       white: "#FFFFFF",
     },
   },
   typography: {
-    fontFamily: ["Nixie One", "EB Garamond"].join(","),
+    fontFamily: ["Nixie One", "EB Garamond", "Dancing Script"].join(","),
   },
 });
 

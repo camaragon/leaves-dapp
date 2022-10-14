@@ -12,7 +12,7 @@ import {
 
 function App() {
   return (
-    <main>
+    <main style={{ backgroundColor: "#0CA789" }}>
       <Header />
       <Homepage />
       <Welcome />
