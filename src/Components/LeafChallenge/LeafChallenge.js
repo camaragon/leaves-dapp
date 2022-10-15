@@ -13,62 +13,143 @@ export const LeafChallenge = () => {
         alt="a glowing tree"
         className="underground-background"
         height="contain"
-        style={{ height: "100%", position: "relative", zIndex: "1" }}
+        style={{ height: "100%", position: "absolute" }}
       />
       <Stack
+        height="100vh"
+        width="100vw"
+        display="grid"
+        gridTemplateRows="3fr 1fr 1fr"
         alignItems="center"
-        zIndex="2"
-        position="relative"
-        sx={{ bottom: "40rem" }}
-        textAlign="center"
+        justifyContent="center"
       >
-        <Typography
-          variant="h2"
-          fontWeight="900"
-          backgroundColor="common.white"
-          sx={{ backdropFilter: "blur(10px)", backgroundColor: "transparent" }}
+        <Stack
+          alignItems="center"
+          zIndex="3"
+          position="relative"
+          sx={{ top: 120 }}
+          textAlign="center"
         >
-          The Leaf Challenge
-        </Typography>
-        <Typography
-          fontSize="1.5rem"
-          fontWeight="900"
-          width="50%"
-          sx={{ backdropFilter: "blur(10px)", backgroundColor: "transparent" }}
+          <Typography
+            variant="h2"
+            fontWeight="900"
+            color="common.white"
+            sx={{
+              backdropFilter: "blur(10px)",
+              backgroundColor: "transparent",
+            }}
+          >
+            The Leaf Challenge
+          </Typography>
+          <Typography
+            fontSize="1.5rem"
+            fontWeight="900"
+            width="50%"
+            color="common.white"
+            sx={{
+              backdropFilter: "blur(10px)",
+              backgroundColor: "transparent",
+            }}
+          >
+            We've hidden some identical leaves within the collection, collect
+            them to win 0.25 ETH per matching leaf.
+          </Typography>
+        </Stack>
+        <Stack
+          direction="row"
+          justifyContent="center"
+          margin="8rem 0 0 0"
+          spacing={18}
+          zIndex="2"
+          width="100vw"
         >
-          We've hidden some identical leaves within the collection, collect them
-          to win 0.25 ETH per matching leaf.
-        </Typography>
-        <Stack direction="row" margin="8rem 0 0 0" spacing={12}>
           <img
-            className="leaf-images"
-            height="225rem"
-            width="225rem"
+            height="250rem"
+            width="250rem"
             style={{
               borderRadius: "20%",
+              position: "relative",
+              zIndex: 3,
+              top: "5rem",
+            }}
+            src={beachLeaf}
+            alt="leaf on the beach"
+          />
+
+          <img
+            height="250rem"
+            width="250rem"
+            style={{
+              borderRadius: "20%",
+              position: "relative",
+              zIndex: 3,
+              top: "5rem",
+            }}
+            src={fallLeaf}
+            alt="leaf on the beach"
+          />
+
+          <img
+            height="250rem"
+            width="250rem"
+            style={{
+              borderRadius: "20%",
+              position: "relative",
+              zIndex: 3,
+              top: "5rem",
+            }}
+            src={pinkLeaf}
+            alt="leaf on the beach"
+          />
+        </Stack>
+        <Stack
+          direction="row"
+          justifyContent="center"
+          margin="8rem 0 0 0"
+          spacing={12}
+          width="100vw"
+        >
+          <img
+            className="leaf-images"
+            height="250rem"
+            width="250rem"
+            style={{
+              borderRadius: "20%",
+              position: "relative",
+              right: 70,
+              bottom: 270,
+              zIndex: 2,
             }}
             src={beachLeaf}
             alt="leaf on the beach"
           />
           <img
             className="leaf-images"
-            height="225rem"
-            width="225rem"
+            height="250rem"
+            width="250rem"
             style={{
               borderRadius: "20%",
+              position: "relative",
+              right: 20,
+              bottom: 270,
+              zIndex: 2,
             }}
             src={fallLeaf}
-            alt="leaf in fall"
+            alt="leaf on the beach"
           />
           <img
             className="leaf-images"
-            height="225rem"
-            width="225rem"
+            height="250rem"
+            width="250rem"
             style={{
               borderRadius: "20%",
+              position: "relative",
+              right: -20,
+              bottom: 270,
+              zIndex: 2,
             }}
             src={pinkLeaf}
-            alt="a leaf in a pink room"
+            alt="leaf on the beach"
           />
         </Stack>
       </Stack>

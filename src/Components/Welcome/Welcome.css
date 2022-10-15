@@ -1,0 +1,15 @@
+.image-gallery {
+  flex-wrap: nowrap;
+  width: calc((225px + 2rem) * 30);
+  animation: moveGallery 180s linear 2s infinite;
+  overflow: hidden;
+}
+
+@keyframes moveGallery {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(calc(-100% + 270px));
+  }
+}

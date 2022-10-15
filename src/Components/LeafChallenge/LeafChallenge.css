@@ -1,12 +1,14 @@
 .underground-background {
   animation: moveBackgroundImage 40s linear 1s infinite;
+  background-color: fade(#ffffff, 50%);
   opacity: 0.5;
 }
 
 .leaf-images:hover {
-  height: 15rem;
-  width: 15rem;
+  /* height: 20rem;
+  width: 20rem; */
   transition: 0.15s ease-in-out;
+  z-index: 4 !important;
 }
 
 @keyframes moveBackgroundImage {
