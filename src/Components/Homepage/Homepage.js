@@ -16,28 +16,17 @@ export const Homepage = () => {
       <Typography
         id="welcome"
         variant="h1"
+        fontSize="7rem"
         sx={{
           position: "absolute",
           zIndex: "1",
           color: "white",
-          fontWeight: "bold",
+          fontWeight: "900",
           textShadow: "2px 2px 4px #000000",
         }}
       >
         EDEN: Prelude
       </Typography>
-      {/* <Styled.MintContainer alignItems="center" justifyContent="center">
-        <Button
-          variant="contained"
-          sx={{
-            backgroundColor: "#8ED14E",
-            width: "10rem",
-            height: "3rem",
-          }}
-        >
-          Mint
-        </Button>
-      </Styled.MintContainer> */}
     </Styled.HomepageContainer>
   );
 };

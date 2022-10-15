@@ -1,4 +1,4 @@
-import { Grid, Typography, Button, Stack, Box } from "@mui/material";
+import { Typography, Button, Stack, Box } from "@mui/material";
 import "../../index.css";
 import * as Styled from "./Welcome.styled";
 import "./Welcome.css";
@@ -20,7 +20,12 @@ export const Welcome = () => {
   return (
     <Styled.WelcomeContainer>
       <Stack textAlign="center" width="100vw">
-        <Typography variant="h1" color="common.white">
+        <Typography
+          variant="h1"
+          color="common.white"
+          fontWeight="900"
+          sx={{ textShadow: "2px 2px 4px #000000" }}
+        >
           Welcome to Eden
         </Typography>
         <Typography
@@ -66,31 +71,3 @@ export const Welcome = () => {
     </Styled.WelcomeContainer>
   );
 };
-
-{
-  /* <Box
-          display="flex"
-          flexDirection="column"
-          height="20rem"
-          width="30rem"
-          justifyContent="center"
-          sx={{ color: "transparent", "&:hover": { color: "primary.gold" } }}
-          color="primary.gold"
-        >
-          <Typography
-            fontSize="1.5rem"
-            fontFamily="Dancing Script"
-            fontWeight="bold"
-          >
-            ONE LEAF EQUALS ONE ENTRY FIND THE LEAVES THE PRELUDE IS JUST THE
-            BEGINNING
-          </Typography>
-          <Styled.TwitterLink
-            className=""
-            target="_blank"
-            href="https://twitter.com/search?q=%23FINDTHELEAVES&src=typeahead_click"
-          >
-            #FINDTHELEAVES
-          </Styled.TwitterLink>
-        </Box> */
-}

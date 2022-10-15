@@ -58,12 +58,18 @@ export const FAQ = () => {
     <Stack
       id="faq"
       component="section"
-      height="100vh"
+      height="125vh"
       backgroundColor="primary.darkGreen"
       textAlign="center"
       spacing={6}
     >
-      <Typography item variant="h2" margin="6rem 0 0 0" fontWeight="900">
+      <Typography
+        item
+        variant="h2"
+        margin="6rem 0 0 0"
+        fontWeight="900"
+        color="common.white"
+      >
         FAQ
       </Typography>
       <div className="faqs">
@@ -73,8 +79,26 @@ export const FAQ = () => {
             key={i}
             onClick={() => toggleFAQ(i)}
           >
-            <div className="faq-question">{faq.question}</div>
-            <div className="faq-answer">{faq.answer}</div>
+            <div
+              className="faq-question"
+              style={{
+                color: "white",
+                fontFamily: "Nixie One",
+                fontWeight: "900",
+              }}
+            >
+              {faq.question}
+            </div>
+            <div
+              className="faq-answer"
+              style={{
+                color: "white",
+                fontFamily: "Nixie One",
+                fontWeight: "900",
+              }}
+            >
+              {faq.answer}
+            </div>
           </div>
         ))}
       </div>

@@ -6,14 +6,3 @@ export const WelcomeContainer = styled.section`
   backgroundcolor: #0ca789;
   height: 75vh;
 `;
-
-export const TwitterLink = styled.a`
-  font-size: 1.5rem;
-  font-family: Dancing Script;
-  font-weight: bold;
-  color: transparent;
-
-  &:hover {
-    color: #feeb66;
-  }
-`;

@@ -72,8 +72,8 @@ export const TreeFund = () => {
           <Grid item xs={12} display="grid" justifyContent="center">
             <img
               src={treeFund}
-              height="380rem"
-              width="380rem"
+              height="400rem"
+              width="400rem"
               style={{ borderRadius: "50%" }}
               alt="golden tree"
             ></img>
@@ -125,8 +125,8 @@ export const TreeFund = () => {
           <Grid item xs={12} display="grid" justifyItems="center">
             <img
               src={treeFund}
-              height="380rem"
-              width="380rem"
+              height="400rem"
+              width="400rem"
               style={{ borderRadius: "50%" }}
               alt="golden tree"
             ></img>
@@ -166,8 +166,8 @@ export const TreeFund = () => {
           <Grid item xs={12} display="grid" justifyItems="center">
             <img
               src={treeFund}
-              height="380rem"
-              width="380rem"
+              height="400rem"
+              width="400rem"
               style={{ borderRadius: "50%" }}
               alt="golden tree"
             ></img>
