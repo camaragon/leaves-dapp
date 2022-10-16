@@ -37,6 +37,7 @@ export const LeafChallenge = () => {
             sx={{
               backdropFilter: "blur(10px)",
               backgroundColor: "transparent",
+              textShadow: "2px 2px 4px #000000",
             }}
           >
             The Leaf Challenge

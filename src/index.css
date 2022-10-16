@@ -7,12 +7,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  background-color: "#0CA789";
+  background: #0ca789;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+  background-color: "#0CA789";
 }
 
 .gold-text {
@@ -28,5 +29,5 @@ html {
 }
 
 main {
-  background-color: "#0CA789";
+  background-color: #0ca789;
 }

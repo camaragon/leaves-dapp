@@ -1,5 +1,5 @@
 import leafLogo from "../../Images/green-leaf-logo.png";
-import { Stack, Button } from "@mui/material";
+import { Stack, Button, Tooltip } from "@mui/material";
 import * as Styled from "./Header.styled";
 import twitterIcon from "../../Images/twitter.svg";
 import openseaIcon from "../../Images/opensea.svg";
@@ -85,21 +85,35 @@ export const Header = () => {
           <img height="23rem" src={openseaIcon} />
         </Styled.IconLink>
       </Stack>
-      <Button
-        variant="contained"
-        disabled
-        sx={{
-          backgroundColor: "#8ED14E",
-          width: "10rem",
-          height: "3rem",
-          justifySelf: "center",
-          margin: "2rem 0 0 0",
-          fontWeight: "bold",
-          fontFamily: "EB Garamond",
-        }}
+      <Tooltip
+        title="Coming Soon"
+        // arrow
+        followCursor
+        sx={{ backgroundColor: "primary.green" }}
       >
-        Connect Wallet
-      </Button>
+        <span
+          style={{
+            width: "10rem",
+            height: "3rem",
+            justifySelf: "center",
+            margin: "2rem 0 0 0",
+          }}
+        >
+          <Button
+            variant="contained"
+            disabled
+            sx={{
+              backgroundColor: "#8ED14E",
+              width: "10rem",
+              height: "3rem",
+              fontWeight: "bold",
+              fontFamily: "EB Garamond",
+            }}
+          >
+            Connect Wallet
+          </Button>
+        </span>
+      </Tooltip>
     </Styled.HeaderContainer>
   );
 };

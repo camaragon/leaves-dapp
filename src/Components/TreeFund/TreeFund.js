@@ -30,10 +30,21 @@ export const TreeFund = () => {
         alignItems="center"
         justifyContent="end"
       >
-        <Typography variant="h2" fontWeight="900" color="common.white">
+        <Typography
+          variant="h2"
+          fontWeight="900"
+          color="common.white"
+          sx={{ textShadow: "2px 2px 4px #000000" }}
+        >
           Tree Fund
         </Typography>
-        <Typography variant="h2" fontWeight="900" color="primary.gold">
+
+        <Typography
+          variant="h3"
+          fontWeight="900"
+          color="primary.gold"
+          sx={{ textShadow: "2px 2px 4px #000000" }}
+        >
           *The Founders Fund
         </Typography>
       </Stack>

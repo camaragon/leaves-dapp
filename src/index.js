@@ -18,7 +18,19 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: ["Nixie One", "EB Garamond", "Dancing Script"].join(","),
+    fontFamily: ["EB Garamond", "Nixie One", "Dancing Script"].join(","),
+  },
+  components: {
+    MuiTooltip: {
+      styleOverrides: {
+        tooltip: {
+          fontFamily: "EB Garamond",
+          backgroundColor: "#8ED14E",
+          fontWeight: "900",
+          fontSize: "1rem",
+        },
+      },
+    },
   },
 });
 

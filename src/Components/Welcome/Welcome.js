@@ -1,4 +1,4 @@
-import { Typography, Button, Stack, Box } from "@mui/material";
+import { Typography, Button, Stack, Box, Tooltip } from "@mui/material";
 import "../../index.css";
 import * as Styled from "./Welcome.styled";
 import "./Welcome.css";
@@ -36,23 +36,37 @@ export const Welcome = () => {
           engines
         </Typography>
       </Stack>
-      <Box display="grid" width="100vw" alignItems="center">
-        <Button
-          variant="contained"
-          disabled
-          sx={{
-            backgroundColor: "#8ED14E",
-            width: "10rem",
-            height: "3rem",
-            justifySelf: "center",
-            alignSelf: "center",
-            fontWeight: "bold",
-            fontFamily: "EB Garamond",
-            borderRadius: "5rem",
-          }}
+      <Box
+        display="grid"
+        width="100vw"
+        alignItems="center"
+        justifyContent="center"
+      >
+        <Tooltip
+          title="Coming Soon"
+          // arrow
+          followCursor
+          sx={{ backgroundColor: "primary.green" }}
         >
-          Mint
-        </Button>
+          <span style={{ width: "10rem", height: "3rem" }}>
+            <Button
+              variant="contained"
+              disabled
+              sx={{
+                backgroundColor: "#8ED14E",
+                width: "10rem",
+                height: "3rem",
+                justifySelf: "center",
+                alignSelf: "center",
+                fontWeight: "bold",
+                fontFamily: "EB Garamond",
+                borderRadius: "5rem",
+              }}
+            >
+              Mint
+            </Button>
+          </span>
+        </Tooltip>
       </Box>
       <Stack direction="row" className="image-gallery" spacing={4}>
         {shuffledImages.map((image, index) => (

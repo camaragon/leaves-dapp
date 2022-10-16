@@ -69,6 +69,7 @@ export const FAQ = () => {
         margin="7rem 0 0 0"
         fontWeight="900"
         color="common.white"
+        sx={{ textShadow: "2px 2px 4px #000000" }}
       >
         FAQ
       </Typography>
@@ -83,7 +84,7 @@ export const FAQ = () => {
               className="faq-question"
               style={{
                 color: "white",
-                fontFamily: "Nixie One",
+                fontFamily: "EB Garamond",
                 fontWeight: "900",
               }}
             >
@@ -93,7 +94,7 @@ export const FAQ = () => {
               className="faq-answer"
               style={{
                 color: "white",
-                fontFamily: "Nixie One",
+                fontFamily: "EB Garamond",
                 fontWeight: "900",
               }}
             >
