@@ -15,8 +15,6 @@ export const Welcome = () => {
     .sort((a, b) => a.sort - b.sort)
     .map(({ value }) => value);
 
-  console.log(shuffledImages.length);
-
   return (
     <Styled.WelcomeContainer>
       <Stack textAlign="center" width="100vw">
@@ -41,7 +39,7 @@ export const Welcome = () => {
       <Box display="grid" width="100vw" alignItems="center">
         <Button
           variant="contained"
-          // disabled
+          disabled
           sx={{
             backgroundColor: "#8ED14E",
             width: "10rem",
@@ -62,8 +60,8 @@ export const Welcome = () => {
             key={index}
             src={image}
             alt="gallery leaves"
-            height="225rem"
-            width="225rem"
+            height="225"
+            width="225"
             style={{ borderRadius: "2rem" }}
           />
         ))}

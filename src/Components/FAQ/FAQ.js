@@ -58,7 +58,7 @@ export const FAQ = () => {
     <Stack
       id="faq"
       component="section"
-      height="125vh"
+      height="120vh"
       backgroundColor="primary.darkGreen"
       textAlign="center"
       spacing={6}
@@ -66,7 +66,7 @@ export const FAQ = () => {
       <Typography
         item
         variant="h2"
-        margin="6rem 0 0 0"
+        margin="7rem 0 0 0"
         fontWeight="900"
         color="common.white"
       >

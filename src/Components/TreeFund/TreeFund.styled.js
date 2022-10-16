@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const TreeFundContainer = styled.section`
   display: grid;
-  grid: 1fr 7fr / 1fr;
+  grid: 1fr 6fr / 1fr;
   height: 200vh;
 `;
 export const TimelineContainer = styled.div`
@@ -22,14 +22,20 @@ export const PipelineContainer = styled.div`
 
 export const Pipeline = styled.div`
   width: 1.5rem;
-  background-color: white;
+
+  background: rgb(254, 235, 102);
+  background: linear-gradient(
+    0deg,
+    rgba(254, 235, 102, 1) 0%,
+    rgba(255, 255, 255, 1) 47%
+  );
   border-radius: 2rem;
   max-height: 100%;
-  speed: 200
-  -webkit-transition: linear ease;
-  -moz-transition: linear ease;
-  -o-transition: linear ease;
-  transition: linear ease;
+  // -webkit-transition: height linear;
+  // -moz-transition: height linear;
+  // -o-transition: height linear;
+  // transition: height 0ms linear;
+  transition: linear;
 `;
 
 export const TwitterLink = styled.a`

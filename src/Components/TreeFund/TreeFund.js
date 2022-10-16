@@ -24,18 +24,17 @@ export const TreeFund = () => {
 
   return (
     <Styled.TreeFundContainer id="tree-fund">
-      <Stack display="grid" alignItems="start" justifyItems="center">
-        <Typography
-          variant="h2"
-          fontWeight="900"
-          position="relative"
-          color="primary.gold"
-          sx={{ top: 155 }}
-        >
-          *The Founders Fund
-        </Typography>
+      <Stack
+        display="flex"
+        direction="column"
+        alignItems="center"
+        justifyContent="end"
+      >
         <Typography variant="h2" fontWeight="900" color="common.white">
           Tree Fund
+        </Typography>
+        <Typography variant="h2" fontWeight="900" color="primary.gold">
+          *The Founders Fund
         </Typography>
       </Stack>
       <Styled.TimelineContainer className="timeline">
@@ -49,7 +48,7 @@ export const TreeFund = () => {
             item
             xs={12}
             display="flex"
-            direction="column"
+            flexDirection="column"
             justifyContent="center"
             textAlign="center"
             height="15rem"
@@ -72,8 +71,8 @@ export const TreeFund = () => {
           <Grid item xs={12} display="grid" justifyContent="center">
             <img
               src={treeFund}
-              height="400rem"
-              width="400rem"
+              height="450rem"
+              width="450rem"
               style={{ borderRadius: "50%" }}
               alt="golden tree"
             ></img>
@@ -82,7 +81,7 @@ export const TreeFund = () => {
             item
             xs={12}
             display="flex"
-            direction="column"
+            flexDirection="column"
             justifyContent="center"
             textAlign="center"
             height="15rem"
@@ -125,8 +124,8 @@ export const TreeFund = () => {
           <Grid item xs={12} display="grid" justifyItems="center">
             <img
               src={treeFund}
-              height="400rem"
-              width="400rem"
+              height="450rem"
+              width="450rem"
               style={{ borderRadius: "50%" }}
               alt="golden tree"
             ></img>
@@ -135,7 +134,7 @@ export const TreeFund = () => {
             item
             xs={12}
             display="flex"
-            direction="column"
+            flexDirection="column"
             justifyContent="center"
             textAlign="center"
             height="15rem"
@@ -166,8 +165,8 @@ export const TreeFund = () => {
           <Grid item xs={12} display="grid" justifyItems="center">
             <img
               src={treeFund}
-              height="400rem"
-              width="400rem"
+              height="450rem"
+              width="450rem"
               style={{ borderRadius: "50%" }}
               alt="golden tree"
             ></img>

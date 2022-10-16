@@ -60,16 +60,15 @@ export const LeafChallenge = () => {
           justifyContent="center"
           margin="8rem 0 0 0"
           spacing={18}
-          zIndex="2"
           width="100vw"
         >
           <img
-            height="250rem"
-            width="250rem"
+            className="leaf-images"
+            height="270rem"
+            width="270rem"
             style={{
               borderRadius: "20%",
               position: "relative",
-              zIndex: 3,
               top: "5rem",
             }}
             src={beachLeaf}
@@ -77,12 +76,12 @@ export const LeafChallenge = () => {
           />
 
           <img
-            height="250rem"
-            width="250rem"
+            className="leaf-images"
+            height="270rem"
+            width="270rem"
             style={{
               borderRadius: "20%",
               position: "relative",
-              zIndex: 3,
               top: "5rem",
             }}
             src={fallLeaf}
@@ -90,12 +89,12 @@ export const LeafChallenge = () => {
           />
 
           <img
-            height="250rem"
-            width="250rem"
+            className="leaf-images"
+            height="270rem"
+            width="270rem"
             style={{
               borderRadius: "20%",
               position: "relative",
-              zIndex: 3,
               top: "5rem",
             }}
             src={pinkLeaf}
@@ -110,43 +109,37 @@ export const LeafChallenge = () => {
           width="100vw"
         >
           <img
-            className="leaf-images"
-            height="250rem"
-            width="250rem"
+            height="270rem"
+            width="270rem"
             style={{
               borderRadius: "20%",
               position: "relative",
               right: 70,
-              bottom: 270,
-              zIndex: 2,
+              bottom: 250,
             }}
             src={beachLeaf}
             alt="leaf on the beach"
           />
           <img
-            className="leaf-images"
-            height="250rem"
-            width="250rem"
+            height="270rem"
+            width="270rem"
             style={{
               borderRadius: "20%",
               position: "relative",
               right: 20,
-              bottom: 270,
-              zIndex: 2,
+              bottom: 250,
             }}
             src={fallLeaf}
             alt="leaf on the beach"
           />
           <img
-            className="leaf-images"
-            height="250rem"
-            width="250rem"
+            height="270rem"
+            width="270rem"
             style={{
               borderRadius: "20%",
               position: "relative",
               right: -20,
-              bottom: 270,
-              zIndex: 2,
+              bottom: 250,
             }}
             src={pinkLeaf}
             alt="leaf on the beach"

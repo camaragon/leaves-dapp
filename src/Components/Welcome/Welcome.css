@@ -1,6 +1,6 @@
 .image-gallery {
   flex-wrap: nowrap;
-  width: calc((225px + 2rem) * 30);
+  width: calc((225px + 2rem) * 53);
   animation: moveGallery 180s linear 2s infinite;
   overflow: hidden;
 }

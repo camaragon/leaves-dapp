@@ -5,10 +5,12 @@
 }
 
 .leaf-images:hover {
-  /* height: 20rem;
-  width: 20rem; */
-  transition: 0.15s ease-in-out;
-  z-index: 4 !important;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+  z-index: 2 !important;
 }
 
 @keyframes moveBackgroundImage {

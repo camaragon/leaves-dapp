@@ -12,6 +12,7 @@
   display: flex;
   flex-direction: column;
   align-content: center;
+  justify-content: center;
   /* margin: 15px; */
   padding: 1rem;
   /* border-bottom: 1px solid #01feff; */
@@ -20,6 +21,7 @@
   background-color: #0ca789;
   cursor: pointer;
   margin: 0 0 1rem 0;
+  box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.2);
 }
 
 .faqs .faq .faq-question {
