@@ -1,6 +1,6 @@
 .image-gallery {
   flex-wrap: nowrap;
-  width: calc((250px + 2rem) * 53);
+  width: calc((370px + 2rem) * 53);
   animation: moveGallery 450s linear 3s infinite;
   overflow: hidden;
 }
@@ -10,7 +10,7 @@
     transform: translateX(0);
   }
   50% {
-    transform: translateX(calc(-100% + 270px));
+    transform: translateX(calc(-100% + 370px));
   }
 }
 

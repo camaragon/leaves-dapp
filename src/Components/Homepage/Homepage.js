@@ -27,19 +27,16 @@ export const Homepage = () => {
       .then(() => setImgsLoaded(true))
       .catch((err) => console.log("Failed to load images", err));
   }, []);
-  console.log(imgsLoaded);
   return (
     <Styled.HomepageContainer>
-      <div className="intro-background">
-        {imgsLoaded && (
-          <LazyLoadImage
-            src={tree}
-            alt="a glowing tree"
-            className="homepage-background"
-            height="contain"
-          />
-        )}
-      </div>
+      {imgsLoaded && (
+        <LazyLoadImage
+          src={tree}
+          alt="a glowing tree"
+          className="homepage-background"
+          height="100%"
+        />
+      )}
       <Typography
         id="welcome"
         variant="h1"

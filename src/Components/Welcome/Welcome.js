@@ -18,7 +18,12 @@ export const Welcome = () => {
 
   return (
     <Styled.WelcomeContainer>
-      <Stack textAlign="center" width="100vw" alignItems="center">
+      <Stack
+        textAlign="center"
+        width="100vw"
+        alignItems="center"
+        justifyContent="end"
+      >
         <Typography
           variant="h1"
           color="common.white"
@@ -51,14 +56,14 @@ export const Welcome = () => {
           followCursor
           sx={{ backgroundColor: "primary.green" }}
         >
-          <span style={{ width: "10rem", height: "3rem" }}>
+          <span style={{ width: "12rem", height: "5rem" }}>
             <Button
               variant="contained"
               disabled
               sx={{
                 backgroundColor: "#8ED14E",
-                width: "10rem",
-                height: "3rem",
+                width: "100%",
+                height: "100%",
                 justifySelf: "center",
                 alignSelf: "center",
                 fontWeight: "bold",
@@ -80,9 +85,9 @@ export const Welcome = () => {
             alt="gallery leaves"
             // height="90%"
             // width="100%"
-            height="250"
-            width="250"
-            style={{ borderRadius: "2rem" }}
+            // height="250"
+            // width="250"
+            style={{ borderRadius: "2rem", margin: "0 0 2rem 2rem" }}
           />
         ))}
       </Stack>
