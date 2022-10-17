@@ -4,7 +4,6 @@ import fallLeaf from "../../Images/fall-leaf.webp";
 import pinkLeaf from "../../Images/pink-leaf.webp";
 import undergroundBackground from "../../Images/underground.png";
 import "./LeafChallenge.css";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import React, { useState, useEffect } from "react";
 
 export const LeafChallenge = () => {

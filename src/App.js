@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import {
   Header,
   LeafChallenge,
@@ -9,7 +8,6 @@ import {
   Footer,
 } from "./Components";
 import "./index.css";
-// import { redirect } from "react-router-dom";
 
 function App() {
   return (
