@@ -13,7 +13,7 @@ export const Header = () => {
     const sectionsList = document.querySelectorAll("section");
     sectionsList.forEach((section, index) => {
       /* does not include the first section */
-      if (index > 0 && index.length) {
+      if (index > 0) {
         /* coordinates of the section */
         const coord = section.getBoundingClientRect();
 
