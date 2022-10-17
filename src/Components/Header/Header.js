@@ -11,13 +11,12 @@ export const Header = () => {
 
   const highlightViewportSectionLink = () => {
     const sectionsList = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(`nav > a`);
     sectionsList.forEach((section, index) => {
       /* does not include the first section */
-      if (index > 0) {
+      if (index > 0 && navLinks.length) {
         /* coordinates of the section */
         const coord = section.getBoundingClientRect();
-
-        const navLinks = document.querySelectorAll(`nav > a`);
 
         const relevantLink = navLinks[index - 1];
 
@@ -67,9 +66,11 @@ export const Header = () => {
           <Stack
             component="nav"
             direction="row"
+            // alignItems="space-around"
+            justifyContent="space-around"
             height="20%"
             margin="2rem 0 0 3rem"
-            spacing={10}
+            // spacing={10}
           >
             <Styled.NavLink className="nav-link" href="#welcome">
               Welcome
