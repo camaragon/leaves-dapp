@@ -1,5 +1,22 @@
 .homepage-background {
-  /* animation: moveHomepageImage 30s linear 1s infinite; */
+  /* animation: moveHomepageImage 30s linear 2s infinite; */
+  aspect-ratio: 29.75 / 10.82;
+  height: 100vh;
+  max-height: 1000px;
+  min-height: 750px;
+  min-width: fit-content;
+  position: relative;
+  z-index: 1;
+}
+
+.intro-background {
+  animation: 30s linear 1s infinite normal none running moveHomepageImage;
+  display: flex;
+  justify-content: center;
+  left: 0px;
+  margin: 0px auto;
+  max-width: fit-content;
+  z-index: 1;
 }
 
 @keyframes moveHomepageImage {

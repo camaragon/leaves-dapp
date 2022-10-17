@@ -1,5 +1,5 @@
 .underground-background {
-  animation: moveBackgroundImage 40s linear 1s infinite;
+  animation: moveBackgroundImage 50s linear 1s infinite;
   background-color: fade(#ffffff, 50%);
   opacity: 0.5;
 }

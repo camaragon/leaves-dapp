@@ -53,7 +53,6 @@ export const Header = () => {
     window.addEventListener("resize", handleResize);
   });
 
-  console.log(windowWidth);
   return (
     <>
       {windowWidth >= 900 || windowWidth === 0 ? (
@@ -70,7 +69,7 @@ export const Header = () => {
             direction="row"
             height="20%"
             margin="2rem 0 0 3rem"
-            spacing={6}
+            spacing={10}
           >
             <Styled.NavLink className="nav-link" href="#welcome">
               Welcome
@@ -99,40 +98,37 @@ export const Header = () => {
           <img height="23rem" src={openseaIcon} />
         </Styled.IconLink> */}
           </Stack>
-          {windowWidth >= 1100 ||
-            (windowWidth === 0 && (
-              <Tooltip
-                title="Coming Soon"
-                // arrow
-                followCursor
+          <Tooltip
+            title="Coming Soon"
+            // arrow
+            followCursor
+            sx={{
+              backgroundColor: "primary.green",
+            }}
+          >
+            <span
+              style={{
+                width: "10rem",
+                height: "3rem",
+                justifySelf: "center",
+                margin: "2rem 0 0 0",
+              }}
+            >
+              <Button
+                variant="contained"
+                disabled
                 sx={{
-                  backgroundColor: "primary.green",
+                  backgroundColor: "#8ED14E",
+                  width: "10rem",
+                  height: "3rem",
+                  fontWeight: "bold",
+                  fontFamily: "EB Garamond",
                 }}
               >
-                <span
-                  style={{
-                    width: "10rem",
-                    height: "3rem",
-                    justifySelf: "center",
-                    margin: "2rem 0 0 0",
-                  }}
-                >
-                  <Button
-                    variant="contained"
-                    disabled
-                    sx={{
-                      backgroundColor: "#8ED14E",
-                      width: "10rem",
-                      height: "3rem",
-                      fontWeight: "bold",
-                      fontFamily: "EB Garamond",
-                    }}
-                  >
-                    Connect Wallet
-                  </Button>
-                </span>
-              </Tooltip>
-            ))}
+                Connect Wallet
+              </Button>
+            </span>
+          </Tooltip>
         </Styled.HeaderContainer>
       ) : (
         <Styled.HeaderContainer>

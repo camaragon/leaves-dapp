@@ -2,6 +2,8 @@ import { Typography, Button, Stack, Box, Tooltip } from "@mui/material";
 import "../../index.css";
 import * as Styled from "./Welcome.styled";
 import "./Welcome.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import React, { useState, useEffect } from "react";
 
 function importAll(r) {
   return r.keys().map(r);
@@ -72,7 +74,7 @@ export const Welcome = () => {
       </Box>
       <Stack direction="row" className="image-gallery" spacing={4}>
         {shuffledImages.map((image, index) => (
-          <img
+          <LazyLoadImage
             className="gallery-leaves"
             key={index}
             src={image}
