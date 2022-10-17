@@ -17,7 +17,7 @@ export const Welcome = () => {
 
   return (
     <Styled.WelcomeContainer>
-      <Stack textAlign="center" width="100vw">
+      <Stack textAlign="center" width="100vw" alignItems="center">
         <Typography
           variant="h1"
           color="common.white"
@@ -29,11 +29,13 @@ export const Welcome = () => {
         <Typography
           fontSize="2rem"
           color="common.white"
-          padding="0 25rem"
+          // padding="0 25rem"
+          width="70%"
           fontWeight="bold"
+          sx={{ textShadow: "2px 2px 4px #000000" }}
         >
-          10,000 unique artist inspired leaves altered by advanced AI art
-          engines
+          10,000 unique artist inspired leaves altered by an advanced AI art
+          engine
         </Typography>
       </Stack>
       <Box
@@ -67,15 +69,19 @@ export const Welcome = () => {
             </Button>
           </span>
         </Tooltip>
+        )
       </Box>
       <Stack direction="row" className="image-gallery" spacing={4}>
         {shuffledImages.map((image, index) => (
           <img
+            className="gallery-leaves"
             key={index}
             src={image}
             alt="gallery leaves"
-            height="225"
-            width="225"
+            // height="90%"
+            // width="100%"
+            height="250"
+            width="250"
             style={{ borderRadius: "2rem" }}
           />
         ))}

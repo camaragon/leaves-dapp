@@ -1,6 +1,8 @@
 import { Stack, Typography } from "@mui/material";
 import { useState } from "react";
 import "./FAQ.css";
+import brownLeaf from "../../Images/footer-leafs/brown-leaf.png";
+import autumnLeaf from "../../Images/footer-leafs/autumn-leaf.png";
 
 export const FAQ = () => {
   const [faqs, setFaqs] = useState([
@@ -13,7 +15,7 @@ export const FAQ = () => {
     {
       question: "When is the launch?",
       answer:
-        "The mint will be 10/21 in the morning when leaves are most crisp.",
+        "The mint will be 10/28 in the morning when leaves are most crisp.",
       open: false,
     },
     {
@@ -63,6 +65,27 @@ export const FAQ = () => {
       textAlign="center"
       spacing={6}
     >
+      <img
+        src={brownLeaf}
+        alt="brown leaf"
+        style={{
+          height: "100%",
+          position: "absolute",
+          transform: "translateX(-35%) rotate(45deg)",
+        }}
+      />
+      <img
+        src={autumnLeaf}
+        alt=""
+        style={{
+          height: "95%",
+          position: "absolute",
+          left: "60%",
+          transform: "translateY(25%) rotate(0deg)",
+          // bottom: -100,
+        }}
+      />
+
       <Typography
         item
         variant="h2"
@@ -73,7 +96,7 @@ export const FAQ = () => {
       >
         FAQ
       </Typography>
-      <div className="faqs">
+      <div className="faqs" style={{ zIndex: 1 }}>
         {faqs.map((faq, i) => (
           <div
             className={"faq " + (faq.open ? "open" : "")}
@@ -86,6 +109,7 @@ export const FAQ = () => {
                 color: "white",
                 fontFamily: "EB Garamond",
                 fontWeight: "900",
+                textShadow: "2px 2px 4px #000000",
               }}
             >
               {faq.question}
@@ -96,6 +120,7 @@ export const FAQ = () => {
                 color: "white",
                 fontFamily: "EB Garamond",
                 fontWeight: "900",
+                textShadow: "2px 2px 4px #000000",
               }}
             >
               {faq.answer}

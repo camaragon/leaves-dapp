@@ -28,6 +28,7 @@ const theme = createTheme({
           backgroundColor: "#8ED14E",
           fontWeight: "900",
           fontSize: "1rem",
+          textShadow: "2px 2px 4px #000000",
         },
       },
     },

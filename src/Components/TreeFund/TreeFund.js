@@ -2,6 +2,8 @@ import { Grid, Stack, Typography } from "@mui/material";
 import treeFund from "../../Images/tree.png";
 import React, { useState } from "react";
 import * as Styled from "./TreeFund.styled";
+import greenTree from "../../Images/green-green-tree.png";
+import redTree from "../../Images/red-green-tree.png";
 
 export const TreeFund = () => {
   const [scroll, setScroll] = useState(0);
@@ -45,7 +47,7 @@ export const TreeFund = () => {
           color="primary.gold"
           sx={{ textShadow: "2px 2px 4px #000000" }}
         >
-          *The Founders Fund
+          [The Founders Fund]
         </Typography>
       </Stack>
       <Styled.TimelineContainer className="timeline">
@@ -64,7 +66,12 @@ export const TreeFund = () => {
             textAlign="center"
             height="15rem"
           >
-            <Typography fontSize="1.5rem" fontWeight="900" color="common.white">
+            <Typography
+              fontSize="1.5rem"
+              fontWeight="900"
+              color="common.white"
+              sx={{ textShadow: "2px 2px 4px #000000" }}
+            >
               A community fund that will grow as we grow. Every project we work
               on will expand our vision and add a cut to this origin fund
               starting with 25 Eth from Leaves
@@ -74,19 +81,17 @@ export const TreeFund = () => {
                 fontSize="1.5rem"
                 fontWeight="900"
                 color="primary.gold"
+                sx={{ textShadow: "2px 2px 4px #000000" }}
               >
                 AN EXCLUSIVE FUND FOR THE MOST LOYAL
               </Typography>
             )}
           </Grid>
           <Grid item xs={12} display="grid" justifyContent="center">
-            <img
+            <Styled.TreeImages
               src={treeFund}
-              height="450rem"
-              width="450rem"
-              style={{ borderRadius: "50%" }}
               alt="golden tree"
-            ></img>
+            ></Styled.TreeImages>
           </Grid>
           <Grid
             item
@@ -102,11 +107,17 @@ export const TreeFund = () => {
                 fontSize="1.5rem"
                 fontWeight="900"
                 color="primary.gold"
+                sx={{ textShadow: "2px 2px 4px #000000" }}
               >
                 BOTH TREE AND FOUNDERS FUNDS
               </Typography>
             )}
-            <Typography fontSize="1.5rem" fontWeight="900" color="common.white">
+            <Typography
+              fontSize="1.5rem"
+              fontWeight="900"
+              color="common.white"
+              sx={{ textShadow: "2px 2px 4px #000000" }}
+            >
               Gatekeepers will get 5 votes per NFT, remaining holders get 1 vote
               per NFT
             </Typography>
@@ -133,13 +144,10 @@ export const TreeFund = () => {
           justifySelf="center"
         >
           <Grid item xs={12} display="grid" justifyItems="center">
-            <img
-              src={treeFund}
-              height="450rem"
-              width="450rem"
-              style={{ borderRadius: "50%" }}
-              alt="golden tree"
-            ></img>
+            <Styled.TreeImages
+              src={greenTree}
+              alt="green tree"
+            ></Styled.TreeImages>
           </Grid>
           <Grid
             item
@@ -155,11 +163,17 @@ export const TreeFund = () => {
                 fontSize="1.5rem"
                 fontWeight="900"
                 color="primary.gold"
+                sx={{ textShadow: "2px 2px 4px #000000" }}
               >
                 250 WILL BE CHOSEN
               </Typography>
             )}
-            <Typography fontSize="1.5rem" fontWeight="900" color="common.white">
+            <Typography
+              fontSize="1.5rem"
+              fontWeight="900"
+              color="common.white"
+              sx={{ textShadow: "2px 2px 4px #000000" }}
+            >
               Community driven based on NFT holder votes that can be used to
               fund holder projects, host events, and more
             </Typography>
@@ -168,19 +182,17 @@ export const TreeFund = () => {
                 fontSize="1.5rem"
                 fontWeight="900"
                 color="primary.gold"
+                sx={{ textShadow: "2px 2px 4px #000000" }}
               >
                 GRANTED INFLUENCE
               </Typography>
             )}
           </Grid>
           <Grid item xs={12} display="grid" justifyItems="center">
-            <img
-              src={treeFund}
-              height="450rem"
-              width="450rem"
-              style={{ borderRadius: "50%" }}
+            <Styled.TreeImages
+              src={redTree}
               alt="golden tree"
-            ></img>
+            ></Styled.TreeImages>
           </Grid>
         </Grid>
       </Styled.TimelineContainer>

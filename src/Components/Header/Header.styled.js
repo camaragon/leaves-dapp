@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "@mui/material";
+import { Link, Stack } from "@mui/material";
 
 export const HeaderContainer = styled.header`
   position: fixed;
@@ -10,6 +10,11 @@ export const HeaderContainer = styled.header`
   z-index: 90;
   backdrop-filter: blur(10px);
   background-color: transparent;
+
+  @media (max-width: 900px) {
+    display: grid;
+    grid: 1fr / 1fr;
+  }
 `;
 
 export const NavLink = styled.a`
@@ -23,6 +28,7 @@ export const NavLink = styled.a`
     cursor: pointer;
     border-radius: 4px;
     transition: 0.3s ease;
+    text-shadow: 2px 2px 4px #000000;
 
     &:hover {
       background-color: rgb(142, 209, 78);
@@ -45,5 +51,18 @@ export const IconLink = styled.a`
     &:hover {
       background-color: rgb(142, 209, 78);
     }
+
+    @media (max-width: 900px) {
+      margin: 0.25rem 0 0 2rem;
+      height: 0;
+    }
   }
+`;
+
+export const MobileHeader = styled.nav`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 12vh;
+  margin; 0;
 `;

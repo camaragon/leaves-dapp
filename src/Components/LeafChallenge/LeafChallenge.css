@@ -4,13 +4,24 @@
   opacity: 0.5;
 }
 
-.leaf-images:hover {
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  transition: all 1s ease;
-  z-index: 2 !important;
+.leaf-images:hover #moving-up {
+  margin: 1rem 0 0 0 !important;
+  transition: margin 1s ease;
+  position: relative;
+}
+
+.leaf-images:hover #moving-down {
+  margin: -2rem 0 0 0 !important;
+  transition: margin 1s ease;
+  position: relative;
+}
+
+#moving-up {
+  transition: margin 1s ease;
+}
+
+#moving-down {
+  transition: margin 1s ease;
 }
 
 @keyframes moveBackgroundImage {
@@ -22,6 +33,18 @@
     transform: translate3d(-50rem, 0, 0);
   }
   75% {
-    transform: translate3d(-10rem, 0, 0);
+    transform: translate3d(-15rem, 0, 0);
+  }
+}
+
+@media (max-width: 950px) {
+  #moving-up {
+    height: 200px;
+    width: 200px;
+  }
+
+  #moving-down {
+    height: 200px;
+    width: 200px;
   }
 }

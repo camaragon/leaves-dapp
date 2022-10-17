@@ -4,6 +4,14 @@ export const TreeFundContainer = styled.section`
   display: grid;
   grid: 1fr 6fr / 1fr;
   height: 200vh;
+  width: 100vw;
+  background: rgb(10, 168, 136);
+  background: linear-gradient(
+    90deg,
+    rgba(10, 168, 136, 1) 25%,
+    rgba(22, 131, 125, 100) 50%,
+    rgba(10, 168, 136, 1) 75%
+  );
 `;
 export const TimelineContainer = styled.div`
   display: grid;
@@ -43,4 +51,16 @@ export const TwitterLink = styled.a`
   font-family: Nixie One;
   font-weight: bold;
   color: #feeb66;
+  text-shadow: 2px 2px 4px #000000;
+`;
+
+export const TreeImages = styled.img`
+  height: 550px;
+  width: 550px;
+  border-radius: 50%;
+
+  @media (max-width: 990px) {
+    height: 250px;
+    width: 250px;
+  }
 `;

@@ -23,6 +23,7 @@ export const Homepage = () => {
           color: "white",
           fontWeight: "900",
           textShadow: "2px 2px 4px #000000",
+          textAlign: "center",
         }}
       >
         EDEN: Prelude

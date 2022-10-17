@@ -1,6 +1,6 @@
 .image-gallery {
   flex-wrap: nowrap;
-  width: calc((225px + 2rem) * 53);
+  width: calc((250px + 2rem) * 53);
   animation: moveGallery 180s linear 2s infinite;
   overflow: hidden;
 }
@@ -11,5 +11,27 @@
   }
   50% {
     transform: translateX(calc(-100% + 270px));
+  }
+}
+
+@media (max-width: 650px) {
+  .gallery-leaves {
+    height: 160px;
+    width: 160px;
+  }
+
+  .image-gallery {
+    width: calc((160px + 2rem) * 53);
+  }
+}
+
+@media (max-width: 450px) {
+  .gallery-leaves {
+    height: 140px;
+    width: 140px;
+  }
+
+  .image-gallery {
+    width: calc((140px + 2rem) * 53);
   }
 }

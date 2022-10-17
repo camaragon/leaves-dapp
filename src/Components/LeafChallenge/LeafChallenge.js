@@ -7,28 +7,26 @@ import "./LeafChallenge.css";
 
 export const LeafChallenge = () => {
   return (
-    <section id="leaf-challenge" style={{ height: "100vh" }}>
+    <section id="leaf-challenge" style={{ height: "100vh", width: "100vw" }}>
       <img
         src={undergroundBackground}
         alt="a glowing tree"
         className="underground-background"
-        height="contain"
         style={{ height: "100%", position: "absolute" }}
       />
       <Stack
         height="100vh"
         width="100vw"
         display="grid"
-        gridTemplateRows="3fr 1fr 1fr"
+        gridTemplateRows="1fr 2fr"
         alignItems="center"
         justifyContent="center"
       >
         <Stack
           alignItems="center"
-          zIndex="3"
-          position="relative"
-          sx={{ top: 120 }}
+          zIndex="2"
           textAlign="center"
+          alignSelf="end"
         >
           <Typography
             variant="h2"
@@ -45,11 +43,12 @@ export const LeafChallenge = () => {
           <Typography
             fontSize="1.5rem"
             fontWeight="900"
-            width="50%"
+            width="75%"
             color="common.white"
             sx={{
               backdropFilter: "blur(10px)",
               backgroundColor: "transparent",
+              textShadow: "2px 2px 4px #000000",
             }}
           >
             We've hidden some identical leaves within the collection, collect
@@ -57,94 +56,90 @@ export const LeafChallenge = () => {
           </Typography>
         </Stack>
         <Stack
-          direction="row"
-          justifyContent="center"
-          margin="8rem 0 0 0"
-          spacing={18}
-          width="100vw"
+          zIndex={2}
+          display="grid"
+          gridTemplateColumns="repeat(3, 1fr)"
+          justifyItems="start"
+          alignSelf="start"
         >
-          <img
-            className="leaf-images"
-            height="270rem"
-            width="270rem"
-            style={{
-              borderRadius: "20%",
-              position: "relative",
-              top: "5rem",
-            }}
-            src={beachLeaf}
-            alt="leaf on the beach"
-          />
-
-          <img
-            className="leaf-images"
-            height="270rem"
-            width="270rem"
-            style={{
-              borderRadius: "20%",
-              position: "relative",
-              top: "5rem",
-            }}
-            src={fallLeaf}
-            alt="leaf on the beach"
-          />
-
-          <img
-            className="leaf-images"
-            height="270rem"
-            width="270rem"
-            style={{
-              borderRadius: "20%",
-              position: "relative",
-              top: "5rem",
-            }}
-            src={pinkLeaf}
-            alt="leaf on the beach"
-          />
-        </Stack>
-        <Stack
-          direction="row"
-          justifyContent="center"
-          margin="8rem 0 0 0"
-          spacing={12}
-          width="100vw"
-        >
-          <img
-            height="270rem"
-            width="270rem"
-            style={{
-              borderRadius: "20%",
-              position: "relative",
-              right: 70,
-              bottom: 250,
-            }}
-            src={beachLeaf}
-            alt="leaf on the beach"
-          />
-          <img
-            height="270rem"
-            width="270rem"
-            style={{
-              borderRadius: "20%",
-              position: "relative",
-              right: 20,
-              bottom: 250,
-            }}
-            src={fallLeaf}
-            alt="leaf on the beach"
-          />
-          <img
-            height="270rem"
-            width="270rem"
-            style={{
-              borderRadius: "20%",
-              position: "relative",
-              right: -20,
-              bottom: 250,
-            }}
-            src={pinkLeaf}
-            alt="leaf on the beach"
-          />
+          <Stack className="leaf-images">
+            <img
+              id="moving-up"
+              height="270rem"
+              width="270rem"
+              style={{
+                borderRadius: "20%",
+                margin: "5rem 0 0 0",
+                border: "5px solid white",
+              }}
+              src={beachLeaf}
+              alt="leaf on the beach"
+            />
+            <img
+              id="moving-down"
+              height="270rem"
+              width="270rem"
+              style={{
+                borderRadius: "20%",
+                margin: "-13rem 0 0 0",
+                border: "5px solid white",
+              }}
+              src={beachLeaf}
+              alt="leaf on the beach"
+            />
+          </Stack>
+          <Stack className="leaf-images">
+            <img
+              id="moving-up"
+              height="270rem"
+              width="270rem"
+              style={{
+                borderRadius: "20%",
+                margin: "5rem 0 0 0",
+                border: "5px solid white",
+              }}
+              src={fallLeaf}
+              alt="leaf on the beach"
+            />
+            <img
+              id="moving-down"
+              height="270rem"
+              width="270rem"
+              style={{
+                borderRadius: "20%",
+                margin: "-13rem 0 0 0",
+                border: "5px solid white",
+              }}
+              src={fallLeaf}
+              alt="leaf on the beach"
+            />
+          </Stack>
+          <Stack className="leaf-images">
+            <img
+              id="moving-up"
+              height="270rem"
+              width="270rem"
+              style={{
+                borderRadius: "20%",
+                margin: "5rem 0 0 0",
+                border: "5px solid white",
+              }}
+              src={pinkLeaf}
+              alt="leaf on the beach"
+            />
+            <img
+              id="moving-down"
+              height="270rem"
+              width="270rem"
+              style={{
+                borderRadius: "20%",
+                margin: "-13rem 0 0 0",
+                border: "5px solid white",
+              }}
+              src={pinkLeaf}
+              alt="leaf on the beach"
+            />
+          </Stack>
         </Stack>
       </Stack>
     </section>
