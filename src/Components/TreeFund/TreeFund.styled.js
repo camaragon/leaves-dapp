@@ -39,10 +39,7 @@ export const Pipeline = styled.div`
   );
   border-radius: 2rem;
   max-height: 100%;
-  // -webkit-transition: height linear;
-  // -moz-transition: height linear;
-  // -o-transition: height linear;
-  // transition: height 0ms linear;
+
   transition: linear;
 `;
 

@@ -1,9 +1,9 @@
 import { Stack, Typography } from "@mui/material";
-import auburnLeaf from "../../Images/footer-leafs/auburn-leaf.png";
-import autumnLeaf from "../../Images/footer-leafs/autumn-leaf.png";
-import brownLeaf from "../../Images/footer-leafs/brown-leaf.png";
-import goldLeaf from "../../Images/footer-leafs/gold-leaf.png";
-import redLeaf from "../../Images/footer-leafs/red-leaf.png";
+// import auburnLeaf from "../../Images/footer-leafs/auburn-leaf.png";
+// import autumnLeaf from "../../Images/footer-leafs/autumn-leaf.png";
+// import brownLeaf from "../../Images/footer-leafs/brown-leaf.png";
+// import goldLeaf from "../../Images/footer-leafs/gold-leaf.png";
+// import redLeaf from "../../Images/footer-leafs/red-leaf.png";
 
 export const Footer = () => {
   return (

@@ -2,7 +2,7 @@ import leafLogo from "../../Images/leaf-logo-2.png";
 import { Stack, Button, Tooltip, Typography } from "@mui/material";
 import * as Styled from "./Header.styled";
 import twitterIcon from "../../Images/twitter.svg";
-import openseaIcon from "../../Images/opensea.svg";
+// import openseaIcon from "../../Images/opensea.svg";
 import "./Header.css";
 import { useEffect, useState } from "react";
 
@@ -89,7 +89,7 @@ export const Header = () => {
               href="https://twitter.com/_10000_LEAVES_"
               backgroundColor="rgba(255, 252, 237, 0.2)"
             >
-              <img height="23rem" src={twitterIcon} />
+              <img height="23rem" src={twitterIcon} alt="twitter icon" />
             </Styled.IconLink>
             {/* <Styled.IconLink
           target="_blank"

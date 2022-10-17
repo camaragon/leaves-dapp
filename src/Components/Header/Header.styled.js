@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link, Stack } from "@mui/material";
 
 export const HeaderContainer = styled.header`
   position: fixed;

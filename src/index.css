@@ -7,7 +7,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  overflow-y: unset;
   background: #0ca789;
 }
 
@@ -22,7 +21,7 @@ code {
   background: -webkit-linear-gradient(transparent, transparent),
     url(https://theblogmarket.co/gold-texture-image.png) repeat;
   background: -o-linear-gradient(transparent, transparent);
-  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 html {
