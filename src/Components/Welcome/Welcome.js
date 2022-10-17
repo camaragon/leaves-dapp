@@ -87,7 +87,7 @@ export const Welcome = () => {
             // width="100%"
             // height="250"
             // width="250"
-            style={{ borderRadius: "2rem", margin: "0 0 2rem 2rem" }}
+            style={{ borderRadius: "2rem", margin: "0 0 3rem 3rem" }}
           />
         ))}
       </Stack>
