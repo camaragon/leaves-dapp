@@ -69,7 +69,6 @@ export const Welcome = () => {
             </Button>
           </span>
         </Tooltip>
-        )
       </Box>
       <Stack direction="row" className="image-gallery" spacing={4}>
         {shuffledImages.map((image, index) => (

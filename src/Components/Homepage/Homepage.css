@@ -1,5 +1,5 @@
 .homepage-background {
-  animation: moveHomepageImage 30s linear 1s infinite;
+  /* animation: moveHomepageImage 30s linear 1s infinite; */
 }
 
 @keyframes moveHomepageImage {
