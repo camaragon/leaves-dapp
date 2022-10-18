@@ -28,6 +28,7 @@ export const LeafChallenge = () => {
       .then(() => setImgsLoaded(true))
       .catch((err) => console.log("Failed to load images", err));
   }, []);
+
   return (
     <section id="leaf-challenge" style={{ height: "100vh", width: "100vw" }}>
       {imgsLoaded && (
@@ -35,7 +36,7 @@ export const LeafChallenge = () => {
           src={undergroundBackground}
           alt="a glowing tree"
           className="underground-background"
-          style={{ height: "100%", position: "absolute" }}
+          style={{ position: "absolute" }}
         />
       )}
       <Stack
@@ -89,8 +90,6 @@ export const LeafChallenge = () => {
           <Stack className="leaf-images" dispay="grid" alignItems="center">
             <img
               id="moving-up"
-              height="250"
-              width="250"
               style={{
                 borderRadius: "20%",
                 margin: "5rem 0 0 0",
@@ -101,8 +100,6 @@ export const LeafChallenge = () => {
             />
             <img
               id="moving-down"
-              height="250"
-              width="250"
               style={{
                 borderRadius: "20%",
                 margin: "-13rem 0 0 0",
@@ -115,8 +112,6 @@ export const LeafChallenge = () => {
           <Stack className="leaf-images" dispay="grid" alignItems="center">
             <img
               id="moving-up"
-              height="250"
-              width="250"
               style={{
                 borderRadius: "20%",
                 margin: "5rem 0 0 0",
@@ -127,8 +122,6 @@ export const LeafChallenge = () => {
             />
             <img
               id="moving-down"
-              height="250"
-              width="250"
               style={{
                 borderRadius: "20%",
                 margin: "-13rem 0 0 0",
@@ -141,8 +134,6 @@ export const LeafChallenge = () => {
           <Stack className="leaf-images" dispay="grid" alignItems="center">
             <img
               id="moving-up"
-              height="250"
-              width="250"
               style={{
                 borderRadius: "20%",
                 margin: "5rem 0 0 0",
@@ -153,8 +144,6 @@ export const LeafChallenge = () => {
             />
             <img
               id="moving-down"
-              height="250"
-              width="250"
               style={{
                 borderRadius: "20%",
                 margin: "-13rem 0 0 0",

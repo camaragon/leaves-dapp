@@ -1,20 +1,21 @@
 import leafLogo from "../../Images/leaf-logo-2.png";
-import { Stack, Button, Tooltip, Typography } from "@mui/material";
+import { Stack, Button, Tooltip } from "@mui/material";
 import * as Styled from "./Header.styled";
 import twitterIcon from "../../Images/twitter.svg";
 // import openseaIcon from "../../Images/opensea.svg";
 import "./Header.css";
 import { useEffect, useState } from "react";
+// import MenuIcon from "@mui/icons-material/Menu";
 
 export const Header = () => {
-  const [windowWidth, setWindowWidth] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(null);
 
   const highlightViewportSectionLink = () => {
     const sectionsList = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(`nav > a`);
     sectionsList.forEach((section, index) => {
       /* does not include the first section */
-      if (index > 0 && navLinks.length) {
+      if (index > 0 && navLinks.length > 1) {
         /* coordinates of the section */
         const coord = section.getBoundingClientRect();
 
@@ -54,7 +55,7 @@ export const Header = () => {
 
   return (
     <>
-      {windowWidth >= 900 || windowWidth === 0 ? (
+      {windowWidth >= 900 ? (
         <Styled.HeaderContainer>
           <img
             src={leafLogo}
@@ -133,12 +134,12 @@ export const Header = () => {
         </Styled.HeaderContainer>
       ) : (
         <Styled.HeaderContainer>
-          <Styled.MobileHeader>
+          {/* <Styled.MobileHeader>
             <Typography fontSize="2rem" fontWeight="900" color="common.white">
               Mobile Coming Very Soon...
             </Typography>
-          </Styled.MobileHeader>
-          {/* <Styled.MobileHeader>
+          </Styled.MobileHeader> */}
+          <Styled.MobileHeader>
             <img
               src={leafLogo}
               alt="leaf logo"
@@ -151,9 +152,10 @@ export const Header = () => {
               href="https://twitter.com/_10000_LEAVES_"
               backgroundColor="rgba(255, 252, 237, 0.2)"
             >
-              <img height="23rem" src={twitterIcon} />
+              <img height="25rem" src={twitterIcon} alt="twitter icon" />
             </Styled.IconLink>
-          </Styled.MobileHeader> */}
+            {/* <MenuIcon style={{ fontSize: 50 }} /> */}
+          </Styled.MobileHeader>
         </Styled.HeaderContainer>
       )}
     </>

@@ -19,7 +19,7 @@
   align-content: center;
   justify-content: center;
   padding: 1rem;
-  border: 3px solid #8ed14e;
+  border: 0.2rem solid #8ed14e;
   border-radius: 5rem;
   background-color: #0ca789;
   cursor: pointer;
@@ -29,8 +29,8 @@
 
 .faqs .faq .faq-question {
   position: relative;
-  font-size: 25px;
-  margin-bottom: 15px;
+  font-size: 200%;
+  margin-bottom: 1%;
   transition: all 0.4s ease;
 }
 
@@ -57,7 +57,7 @@
   max-height: 0;
   overflow-y: hidden;
   transition: all 0.4s ease-out;
-  font-size: 20px;
+  font-size: 150%;
   color: "#FFFFFF";
 }
 
@@ -70,65 +70,18 @@
 }
 
 .faqs .faq.open .faq-answer {
-  max-height: 1000px;
+  max-height: 150rem;
   opacity: 1;
 }
 
-@media (max-width: 1000px) {
-  .faqs .faq .faq-question {
-    position: relative;
-    font-size: 20px;
-    margin-bottom: 15px;
-    transition: all 0.4s ease;
-  }
-
-  .faqs .faq {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    margin: 10px;
-    padding: 10px;
-    border-bottom: 1px solid #01feff;
-    cursor: pointer;
-  }
-
-  .faqs .faq .faq-answer {
-    opacity: 0;
-    max-height: 0;
-    overflow-y: hidden;
-    transition: all 0.4s ease-out;
-    font-size: 15px;
-  }
-
-  .faqs .faq .faq-question::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: 0px;
-    transform: translateY(-50%) rotate(135deg);
-    width: 5rem;
-    height: 5rem;
-
-    /* background-image: url("../../assets/top_view.svg"); */
-    background-position: center;
-    background-size: 50%;
-    background-repeat: no-repeat;
-
-    transition: all 0.4s ease-out;
+@media (max-width: 800px) {
+  .faq-leaves {
+    height: 10% !important;
   }
 }
 
-@media (max-width: 700px) {
-  .faqs {
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-
-  .faqs .faq .faq-question {
-    font-size: 15px;
-  }
-
-  .faqs .faq .faq-answer {
-    font-size: 13px;
+@media (max-width: 500px) {
+  .faqs .faq .faq-question::after {
+    background-image: none;
   }
 }

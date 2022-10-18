@@ -12,6 +12,7 @@ export const TreeFundContainer = styled.section`
     rgba(22, 131, 125, 100) 50%,
     rgba(10, 168, 136, 1) 75%
   );
+  z-index: 4;
 `;
 export const TimelineContainer = styled.div`
   display: grid;
@@ -26,11 +27,14 @@ export const PipelineContainer = styled.div`
   background-color: rgba(255, 252, 237, 0.2);
   border-radius: 2rem;
   z-index: 2;
+
+  @media (max-width: 800px) {
+    width: 0;
+  }
 `;
 
 export const Pipeline = styled.div`
   width: 1.5rem;
-
   background: rgb(254, 235, 102);
   background: linear-gradient(
     0deg,
@@ -41,6 +45,10 @@ export const Pipeline = styled.div`
   max-height: 100%;
 
   transition: linear;
+
+  @media (max-width: 800px) {
+    width: 0;
+  }
 `;
 
 export const TwitterLink = styled.a`
@@ -59,5 +67,10 @@ export const TreeImages = styled.img`
   @media (max-width: 990px) {
     height: 250px;
     width: 250px;
+  }
+
+  @media (max-width: 500px) {
+    height: 160px;
+    width: 160px;
   }
 `;

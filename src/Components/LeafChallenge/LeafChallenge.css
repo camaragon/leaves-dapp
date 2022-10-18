@@ -2,6 +2,8 @@
   animation: moveBackgroundImage 50s linear 1s infinite;
   background-color: fade(#ffffff, 50%);
   opacity: 0.5;
+  overflow: hidden;
+  height: 100vh;
 }
 
 .leaf-images:hover #moving-up {
@@ -18,10 +20,12 @@
 
 #moving-up {
   transition: margin 1s ease;
+  height: 17rem;
 }
 
 #moving-down {
   transition: margin 1s ease;
+  height: 17rem;
 }
 
 @keyframes moveBackgroundImage {
@@ -46,5 +50,31 @@
   #moving-down {
     height: 200px;
     width: 200px;
+  }
+}
+
+@media (max-width: 700px) {
+  #moving-up {
+    height: 100px;
+    width: 100px;
+    margin: 8rem 0 0 0 !important;
+  }
+
+  #moving-down {
+    height: 100px;
+    width: 100px;
+    margin: -5rem 0 0 0 !important;
+  }
+
+  .leaf-images:hover #moving-up {
+    margin: 3rem 0 0 0 !important;
+    transition: margin 1s ease;
+    position: relative;
+  }
+
+  .leaf-images:hover #moving-down {
+    margin: -1rem 0 0 0 !important;
+    transition: margin 1s ease;
+    position: relative;
   }
 }

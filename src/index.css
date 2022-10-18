@@ -8,6 +8,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   background: #0ca789;
+  /* position: relative; */
 }
 
 code {
@@ -26,8 +27,16 @@ code {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 main {
   background-color: #0ca789;
+  /* overflow-x: hidden; */
+}
+
+@media (max-width: 900px) {
+  body {
+    position: relative;
+  }
 }

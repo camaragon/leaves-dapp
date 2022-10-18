@@ -76,18 +76,13 @@ export const Welcome = () => {
           </span>
         </Tooltip>
       </Box>
-      <Stack direction="row" className="image-gallery" spacing={4}>
+      <Stack direction="row" className="image-gallery" spacing={5}>
         {shuffledImages.map((image, index) => (
           <LazyLoadImage
             className="gallery-leaves"
             key={index}
             src={image}
             alt="gallery leaves"
-            // height="90%"
-            // width="100%"
-            // height="250"
-            // width="250"
-            style={{ borderRadius: "2rem", margin: "0 0 3rem 3rem" }}
           />
         ))}
       </Stack>

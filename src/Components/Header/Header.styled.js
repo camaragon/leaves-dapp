@@ -42,7 +42,6 @@ export const IconLink = styled.a`
     padding: 0.5rem 1rem 2.25rem 1rem;
     white-space: nowrap;
     font-size: 1.25em;
-    text-decoration: none;
     cursor: pointer;
     border-radius: 4px;
     transition: 0.3s ease;
@@ -52,7 +51,7 @@ export const IconLink = styled.a`
     }
 
     @media (max-width: 900px) {
-      margin: 0.25rem 0 0 2rem;
+      margin: 0.5rem 0 0 1rem;
       height: 0;
     }
   }

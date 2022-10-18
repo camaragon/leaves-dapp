@@ -60,12 +60,13 @@ export const FAQ = () => {
     <Stack
       id="faq"
       component="section"
-      height="120vh"
+      height="fit-content"
       backgroundColor="primary.darkGreen"
       textAlign="center"
       spacing={6}
     >
       <img
+        className="faq-leaves"
         src={brownLeaf}
         alt="brown leaf"
         style={{
@@ -75,22 +76,23 @@ export const FAQ = () => {
         }}
       />
       <img
+        className="faq-leaves"
         src={autumnLeaf}
-        alt=""
+        alt="autumn leaf"
         style={{
           height: "95%",
           position: "absolute",
           left: "60%",
           transform: "translateY(25%) rotate(0deg)",
-          // bottom: -100,
         }}
       />
 
       <Typography
         item
         variant="h2"
-        margin="7rem 0 0 0"
+        padding="5% 0 0 0"
         fontWeight="900"
+        fontSize="500%"
         color="common.white"
         sx={{ textShadow: "2px 2px 4px #000000" }}
       >

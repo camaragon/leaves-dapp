@@ -35,6 +35,7 @@ export const TreeFund = () => {
         <Typography
           variant="h2"
           fontWeight="900"
+          fontSize="500%"
           color="common.white"
           sx={{ textShadow: "2px 2px 4px #000000" }}
         >
@@ -44,8 +45,11 @@ export const TreeFund = () => {
         <Typography
           variant="h3"
           fontWeight="900"
+          fontSize="300%"
           color="primary.gold"
-          sx={{ textShadow: "2px 2px 4px #000000" }}
+          sx={{
+            textShadow: "2px 2px 4px #000000",
+          }}
         >
           [The Founders Fund]
         </Typography>
@@ -67,10 +71,13 @@ export const TreeFund = () => {
             height="15rem"
           >
             <Typography
-              fontSize="1.5rem"
+              fontSize="180%"
               fontWeight="900"
               color="common.white"
-              sx={{ textShadow: "2px 2px 4px #000000" }}
+              sx={{
+                textShadow: "2px 2px 4px #000000",
+                // ["@media (max-height:800px)"]: { fontSize: "140%" },
+              }}
             >
               A community fund that will grow as we grow. Every project we work
               on will expand our vision and add a cut to this origin fund
@@ -78,10 +85,13 @@ export const TreeFund = () => {
             </Typography>
             {scroll >= 12 && (
               <Typography
-                fontSize="1.5rem"
+                fontSize="180%"
                 fontWeight="900"
                 color="primary.gold"
-                sx={{ textShadow: "2px 2px 4px #000000" }}
+                sx={{
+                  textShadow: "2px 2px 4px #000000",
+                  // ["@media (max-height:800px)"]: { fontSize: "140%" },
+                }}
               >
                 AN EXCLUSIVE FUND FOR THE MOST LOYAL
               </Typography>
@@ -104,19 +114,25 @@ export const TreeFund = () => {
           >
             {scroll >= 85 && (
               <Typography
-                fontSize="1.5rem"
+                fontSize="180%"
                 fontWeight="900"
                 color="primary.gold"
-                sx={{ textShadow: "2px 2px 4px #000000" }}
+                sx={{
+                  textShadow: "2px 2px 4px #000000",
+                  // ["@media (max-height:800px)"]: { fontSize: "140%" },
+                }}
               >
                 BOTH TREE AND FOUNDERS FUNDS
               </Typography>
             )}
             <Typography
-              fontSize="1.5rem"
+              fontSize="180%"
               fontWeight="900"
               color="common.white"
-              sx={{ textShadow: "2px 2px 4px #000000" }}
+              sx={{
+                textShadow: "2px 2px 4px #000000",
+                // ["@media (max-height:800px)"]: { fontSize: "140%" },
+              }}
             >
               Gatekeepers will get 5 votes per NFT, remaining holders get 1 vote
               per NFT
@@ -160,29 +176,38 @@ export const TreeFund = () => {
           >
             {scroll >= 48 && (
               <Typography
-                fontSize="1.5rem"
+                fontSize="180%"
                 fontWeight="900"
                 color="primary.gold"
-                sx={{ textShadow: "2px 2px 4px #000000" }}
+                sx={{
+                  textShadow: "2px 2px 4px #000000",
+                  // ["@media (max-height:800px)"]: { fontSize: "140%" },
+                }}
               >
                 250 WILL BE CHOSEN
               </Typography>
             )}
             <Typography
-              fontSize="1.5rem"
+              fontSize="180%"
               fontWeight="900"
               color="common.white"
-              sx={{ textShadow: "2px 2px 4px #000000" }}
+              sx={{
+                textShadow: "2px 2px 4px #000000",
+                // ["@media (max-height:800px)"]: { fontSize: "140%" },
+              }}
             >
               Community driven based on NFT holder votes that can be used to
               fund holder projects, host events, and more
             </Typography>
             {scroll >= 48 && (
               <Typography
-                fontSize="1.5rem"
+                fontSize="180%"
                 fontWeight="900"
                 color="primary.gold"
-                sx={{ textShadow: "2px 2px 4px #000000" }}
+                sx={{
+                  textShadow: "2px 2px 4px #000000",
+                  // ["@media (max-height:800px)"]: { fontSize: "140%" },
+                }}
               >
                 GRANTED INFLUENCE
               </Typography>
