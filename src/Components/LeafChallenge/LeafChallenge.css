@@ -40,6 +40,17 @@
     transform: translate3d(-15rem, 0, 0);
   }
 }
+@media (min-width: 2200px) {
+  #moving-up {
+    height: 400px;
+    width: 400px;
+  }
+
+  #moving-down {
+    height: 400px;
+    width: 400px;
+  }
+}
 
 @media (max-width: 950px) {
   #moving-up {

@@ -45,7 +45,6 @@ export const LeafChallenge = () => {
         display="grid"
         gridTemplateRows="1fr 2fr"
         alignItems="center"
-        justifyContent="center"
       >
         <Stack
           alignItems="center"
@@ -84,7 +83,6 @@ export const LeafChallenge = () => {
           zIndex={2}
           display="grid"
           gridTemplateColumns="repeat(3, 1fr)"
-          justifyItems="start"
           alignSelf="start"
         >
           <Stack className="leaf-images" dispay="grid" alignItems="center">

@@ -74,13 +74,25 @@
   opacity: 1;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 2600px) {
+  .faq-leaves {
+    height: 50% !important;
+  }
+}
+
+@media (max-width: 1500px) {
+  .faq-leaves {
+    height: 90% !important;
+  }
+}
+
+@media (max-width: 900px) {
   .faq-leaves {
     height: 10% !important;
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   .faqs .faq .faq-question::after {
     background-image: none;
   }
