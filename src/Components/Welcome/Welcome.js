@@ -2,7 +2,6 @@ import { Typography, Button, Stack, Box, Tooltip } from "@mui/material";
 import "../../index.css";
 import * as Styled from "./Welcome.styled";
 import "./Welcome.css";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function importAll(r) {
   return r.keys().map(r);
