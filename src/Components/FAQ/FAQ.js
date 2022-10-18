@@ -70,7 +70,7 @@ export const FAQ = () => {
         src={brownLeaf}
         alt="brown leaf"
         style={{
-          height: "30%",
+          height: "50%",
           position: "absolute",
           transform: "translateX(-35%) rotate(45deg)",
         }}
@@ -80,7 +80,7 @@ export const FAQ = () => {
         src={autumnLeaf}
         alt="autumn leaf"
         style={{
-          height: "30%",
+          height: "50%",
           position: "absolute",
           left: "60%",
           transform: "translateY(25%) rotate(0deg)",

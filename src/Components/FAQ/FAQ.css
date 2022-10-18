@@ -74,17 +74,23 @@
   opacity: 1;
 }
 
-@media (max-width: 2600px) {
+@media (max-width: 2800px) {
   .faq-leaves {
-    height: 50% !important;
+    height: 60rem !important;
   }
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 2200px) {
   .faq-leaves {
-    height: 90% !important;
+    height: 50rem !important;
   }
 }
+
+/* @media (max-width: 1800px) {
+  .faq-leaves {
+    height: 70% !important;
+  }
+} */
 
 @media (max-width: 900px) {
   .faq-leaves {
