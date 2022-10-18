@@ -78,7 +78,7 @@ export const Welcome = () => {
       </Box>
       <Stack direction="row" className="image-gallery" spacing={5}>
         {shuffledImages.map((image, index) => (
-          <LazyLoadImage
+          <img
             className="gallery-leaves"
             key={index}
             src={image}
