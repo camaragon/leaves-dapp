@@ -42,6 +42,17 @@
   }
 }
 
+@media (max-width: 1200px) {
+  .gallery-leaves {
+    height: 250px;
+    width: 250px;
+  }
+
+  .image-gallery {
+    width: calc((250px + 2rem) * 53);
+  }
+}
+
 @media (max-width: 650px) {
   .gallery-leaves {
     height: 160px;

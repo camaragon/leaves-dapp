@@ -4,41 +4,39 @@ import fallLeaf from "../../Images/fall-leaf.webp";
 import pinkLeaf from "../../Images/pink-leaf.webp";
 import undergroundBackground from "../../Images/underground.png";
 import "./LeafChallenge.css";
-import React, { useState, useEffect } from "react";
+// import React, { useState, useEffect } from "react";
 
 export const LeafChallenge = () => {
-  const [imgsLoaded, setImgsLoaded] = useState(false);
+  // const [imgsLoaded, setImgsLoaded] = useState(false);
 
-  useEffect(() => {
-    const loadImage = (image) => {
-      return new Promise((resolve, reject) => {
-        const loadImg = new Image();
-        loadImg.src = image.url;
-        // wait 2 seconds to simulate loading time
-        loadImg.onload = () =>
-          setTimeout(() => {
-            resolve(image.url);
-          }, 5000);
+  // useEffect(() => {
+  //   const loadImage = (image) => {
+  //     return new Promise((resolve, reject) => {
+  //       const loadImg = new Image();
+  //       loadImg.src = image.url;
+  //       // wait 2 seconds to simulate loading time
+  //       loadImg.onload = () =>
+  //         setTimeout(() => {
+  //           resolve(image.url);
+  //         }, 5000);
 
-        loadImg.onerror = (err) => reject(err);
-      });
-    };
+  //       loadImg.onerror = (err) => reject(err);
+  //     });
+  //   };
 
-    Promise.resolve(() => loadImage(undergroundBackground))
-      .then(() => setImgsLoaded(true))
-      .catch((err) => console.log("Failed to load images", err));
-  }, []);
+  //   Promise.resolve(() => loadImage(undergroundBackground))
+  //     .then(() => setImgsLoaded(true))
+  //     .catch((err) => console.log("Failed to load images", err));
+  // }, []);
 
   return (
     <section id="leaf-challenge" style={{ height: "100vh", width: "100vw" }}>
-      {imgsLoaded && (
-        <img
-          src={undergroundBackground}
-          alt="a glowing tree"
-          className="underground-background"
-          style={{ position: "absolute" }}
-        />
-      )}
+      <img
+        src={undergroundBackground}
+        alt="a glowing tree"
+        className="underground-background"
+        style={{ position: "absolute" }}
+      />
       <Stack
         height="100vh"
         width="100vw"
