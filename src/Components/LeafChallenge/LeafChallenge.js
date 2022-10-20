@@ -35,7 +35,6 @@ export const LeafChallenge = () => {
         src={undergroundBackground}
         alt="a glowing tree"
         className="underground-background"
-        style={{ position: "absolute" }}
       />
       <Stack
         height="100vh"

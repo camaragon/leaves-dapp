@@ -1,9 +1,10 @@
 .underground-background {
-  animation: moveBackgroundImage 50s linear 1s infinite;
+  animation: moveBackgroundImage 50s linear 2s infinite;
   background-color: fade(#ffffff, 50%);
   opacity: 0.5;
   overflow: hidden;
-  height: 100vh;
+  height: 100%;
+  position: absolute;
 }
 
 .leaf-images:hover #moving-up {
@@ -34,7 +35,7 @@
     transform: translate3d(0, 0, 0);
   }
   30% {
-    transform: translate3d(-50rem, 0, 0);
+    transform: translate3d(-40rem, 0, 0);
   }
   75% {
     transform: translate3d(-15rem, 0, 0);
