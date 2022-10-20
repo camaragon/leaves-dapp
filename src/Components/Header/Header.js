@@ -55,7 +55,7 @@ export const Header = () => {
 
   return (
     <>
-      {windowWidth >= 900 || windowWidth === null ? (
+      {windowWidth >= 900 || window.innerWidth >= 900 ? (
         <Styled.HeaderContainer>
           <img
             src={leafLogo}

@@ -74,3 +74,26 @@ export const TreeImages = styled.img`
     width: 160px;
   }
 `;
+
+export const WhiteText = styled.p`
+  font-size: 180%;
+  font-weight: 900;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+
+  @media (max-width: 900px) {
+    font-size: 150%;
+  }
+`;
+
+export const GoldText = styled.p`
+  font-size: 180%;
+  font-weight: 900;
+  color: #feeb66;
+  text-shadow: 2px 2px 4px #000000;
+  margin: 0;
+
+  @media (max-width: 990px) {
+    font-size: 150%;
+  }
+`;

@@ -70,31 +70,15 @@ export const TreeFund = () => {
             textAlign="center"
             height="15rem"
           >
-            <Typography
-              fontSize="180%"
-              fontWeight="900"
-              color="common.white"
-              sx={{
-                textShadow: "2px 2px 4px #000000",
-                // ["@media (max-height:800px)"]: { fontSize: "140%" },
-              }}
-            >
+            <Styled.WhiteText>
               A community fund that will grow as we grow. Every project we work
               on will expand our vision and add a cut to this origin fund
               starting with 25 Eth from Leaves
-            </Typography>
+            </Styled.WhiteText>
             {scroll >= 12 && (
-              <Typography
-                fontSize="180%"
-                fontWeight="900"
-                color="primary.gold"
-                sx={{
-                  textShadow: "2px 2px 4px #000000",
-                  // ["@media (max-height:800px)"]: { fontSize: "140%" },
-                }}
-              >
+              <Styled.GoldText>
                 AN EXCLUSIVE FUND FOR THE MOST LOYAL
-              </Typography>
+              </Styled.GoldText>
             )}
           </Grid>
           <Grid item xs={12} display="grid" justifyContent="center">
@@ -113,30 +97,12 @@ export const TreeFund = () => {
             height="15rem"
           >
             {scroll >= 85 && (
-              <Typography
-                fontSize="180%"
-                fontWeight="900"
-                color="primary.gold"
-                sx={{
-                  textShadow: "2px 2px 4px #000000",
-                  // ["@media (max-height:800px)"]: { fontSize: "140%" },
-                }}
-              >
-                BOTH TREE AND FOUNDERS FUNDS
-              </Typography>
+              <Styled.GoldText>BOTH TREE AND FOUNDERS FUNDS</Styled.GoldText>
             )}
-            <Typography
-              fontSize="180%"
-              fontWeight="900"
-              color="common.white"
-              sx={{
-                textShadow: "2px 2px 4px #000000",
-                // ["@media (max-height:800px)"]: { fontSize: "140%" },
-              }}
-            >
+            <Styled.WhiteText>
               Gatekeepers will get 5 votes per NFT, remaining holders get 1 vote
               per NFT
-            </Typography>
+            </Styled.WhiteText>
             {scroll >= 85 && (
               <Styled.TwitterLink
                 target="_blank"
@@ -175,42 +141,14 @@ export const TreeFund = () => {
             height="15rem"
           >
             {scroll >= 48 && (
-              <Typography
-                fontSize="180%"
-                fontWeight="900"
-                color="primary.gold"
-                sx={{
-                  textShadow: "2px 2px 4px #000000",
-                  // ["@media (max-height:800px)"]: { fontSize: "140%" },
-                }}
-              >
-                250 WILL BE CHOSEN
-              </Typography>
+              <Styled.GoldText>250 WILL BE CHOSEN</Styled.GoldText>
             )}
-            <Typography
-              fontSize="180%"
-              fontWeight="900"
-              color="common.white"
-              sx={{
-                textShadow: "2px 2px 4px #000000",
-                // ["@media (max-height:800px)"]: { fontSize: "140%" },
-              }}
-            >
+            <Styled.WhiteText>
               Community driven based on NFT holder votes that can be used to
               fund holder projects, host events, and more
-            </Typography>
+            </Styled.WhiteText>
             {scroll >= 48 && (
-              <Typography
-                fontSize="180%"
-                fontWeight="900"
-                color="primary.gold"
-                sx={{
-                  textShadow: "2px 2px 4px #000000",
-                  // ["@media (max-height:800px)"]: { fontSize: "140%" },
-                }}
-              >
-                GRANTED INFLUENCE
-              </Typography>
+              <Styled.GoldText>GRANTED INFLUENCE</Styled.GoldText>
             )}
           </Grid>
           <Grid item xs={12} display="grid" justifyItems="center">
