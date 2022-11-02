@@ -73,7 +73,7 @@ export const LeafChallenge = () => {
             }}
           >
             We've hidden some identical leaves within the collection, collect
-            them to win 0.25 ETH per matching leaf.
+            them to win ETH per matching leaf.
           </Typography>
         </Stack>
         <Stack

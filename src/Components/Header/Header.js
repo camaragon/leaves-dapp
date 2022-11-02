@@ -5,9 +5,10 @@ import twitterIcon from "../../Images/twitter.svg";
 // import openseaIcon from "../../Images/opensea.svg";
 import "./Header.css";
 import { useEffect, useState } from "react";
+import { Squash as Hamburger } from "hamburger-react";
 // import MenuIcon from "@mui/icons-material/Menu";
 
-export const Header = () => {
+export const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
   const [windowWidth, setWindowWidth] = useState(null);
 
   const highlightViewportSectionLink = () => {
@@ -52,6 +53,10 @@ export const Header = () => {
 
     window.addEventListener("resize", handleResize);
   });
+
+  const handleMobileLinkClick = () => {
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <>
@@ -133,29 +138,99 @@ export const Header = () => {
           </Tooltip>
         </Styled.HeaderContainer>
       ) : (
-        <Styled.HeaderContainer>
-          {/* <Styled.MobileHeader>
-            <Typography fontSize="2rem" fontWeight="900" color="common.white">
-              Mobile Coming Very Soon...
-            </Typography>
-          </Styled.MobileHeader> */}
+        <Styled.HeaderContainer isMobileMenuOpen={isMobileMenuOpen}>
           <Styled.MobileHeader>
             <img
               src={leafLogo}
               alt="leaf logo"
               height="80rem"
               width="80rem"
-              style={{ margin: "0.5rem 0 0 3rem" }}
+              // style={{ margin: "0.5rem 0 0 3rem" }}
             />
-            <Styled.IconLink
+            {/* <Styled.IconLink
               target="_blank"
               href="https://twitter.com/_10000_LEAVES_"
               backgroundColor="rgba(255, 252, 237, 0.2)"
             >
               <img height="25rem" src={twitterIcon} alt="twitter icon" />
-            </Styled.IconLink>
-            {/* <MenuIcon style={{ fontSize: 50 }} /> */}
+            </Styled.IconLink> */}
+            <Hamburger
+              color="white"
+              size={40}
+              toggled={isMobileMenuOpen}
+              toggle={setIsMobileMenuOpen}
+            />
           </Styled.MobileHeader>
+          {isMobileMenuOpen && (
+            <Styled.MobileMenu>
+              <Styled.MobileNavLink
+                className="nav-link"
+                onClick={handleMobileLinkClick}
+                href="#welcome"
+              >
+                Welcome
+              </Styled.MobileNavLink>
+              <Styled.MobileNavLink
+                className="nav-link"
+                onClick={handleMobileLinkClick}
+                href="#leaf-challenge"
+              >
+                Leaf Challenge
+              </Styled.MobileNavLink>
+              <Styled.MobileNavLink
+                className="nav-link"
+                onClick={handleMobileLinkClick}
+                href="#tree-fund"
+              >
+                Tree Fund
+              </Styled.MobileNavLink>
+              <Styled.MobileNavLink
+                className="nav-link"
+                onClick={handleMobileLinkClick}
+                href="#faq"
+              >
+                FAQ
+              </Styled.MobileNavLink>
+              <Styled.MobileIconLink
+                target="_blank"
+                href="https://twitter.com/_10000_LEAVES_"
+                backgroundColor="rgba(255, 252, 237, 0.2)"
+              >
+                <img height="30rem" src={twitterIcon} alt="twitter icon" />
+              </Styled.MobileIconLink>
+              <Tooltip
+                title="Coming Soon"
+                // arrow
+                followCursor
+                sx={{
+                  backgroundColor: "primary.green",
+                }}
+              >
+                <span
+                  style={{
+                    width: "272px",
+                    height: "3rem",
+                    justifySelf: "center",
+                    margin: "1rem 0 0 0",
+                  }}
+                >
+                  <Button
+                    variant="contained"
+                    disabled
+                    sx={{
+                      backgroundColor: "#8ED14E",
+                      width: "272px",
+                      height: "3rem",
+                      fontWeight: "bold",
+                      fontFamily: "EB Garamond",
+                    }}
+                  >
+                    Connect Wallet
+                  </Button>
+                </span>
+              </Tooltip>
+            </Styled.MobileMenu>
+          )}
         </Styled.HeaderContainer>
       )}
     </>

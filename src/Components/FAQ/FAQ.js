@@ -9,13 +9,13 @@ export const FAQ = () => {
     {
       question: "What are LEAVES?",
       answer:
-        "10,000 LEAVES is the Prelude to our Web3 adventure. These LEAVES were hand drawn then altered with keywords to generate the backgrounds through AI interpretation. Collecting one leaf grants holders a guaranteed mint for our main drop in November. ",
+        "10,000 LEAVES is the Prelude to our Web3 adventure. These LEAVES were hand drawn then altered with keywords to generate the backgrounds through AI interpretation. Collecting one leaf grants holders a guaranteed mint for our main drop in December. ",
       open: false,
     },
     {
       question: "When is the launch?",
       answer:
-        "The mint will be 10/28 in the morning when leaves are most crisp.",
+        "The mint will be Nov 28th in the morning when leaves are most crisp.",
       open: false,
     },
     {
@@ -25,8 +25,7 @@ export const FAQ = () => {
     },
     {
       question: "What will be the mint price of a NFT?",
-      answer:
-        "As this collection is the prelude to our main drop in November, LEAVES will cost 0.03 Eth. Owning a leaf will reduce the mint price of our main drop by 0.03 Eth as well held during the presale 3 days earlier.",
+      answer: "Each leaf will cost around 0.015 Eth.",
       open: false,
     },
     {
