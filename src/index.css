@@ -6,8 +6,8 @@ body {
   font-family: "EB Garamond", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
   background: #0ca789;
+  overflow: hidden;
 }
 
 code {
