@@ -23,6 +23,12 @@ export const WelcomeTitle = styled.h1`
   @media (max-width: 600px) {
     font-size: 3rem;
   }
+
+  @media (max-width: 1000px) {
+    @media (max-height: 600px) {
+      font-size: 3rem;
+    }
+  }
 `;
 
 export const WelcomeSubtitle = styled.p`
