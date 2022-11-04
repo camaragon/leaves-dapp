@@ -57,19 +57,19 @@
 
 @media (max-width: 650px) {
   .gallery-leaves {
-    height: 160px;
-    width: 160px;
+    height: 220px;
+    width: 220px;
   }
 
   .image-gallery {
-    width: calc((160px + 2rem) * 53);
+    width: calc((220px + 2rem) * 53);
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 300px) {
   .gallery-leaves {
-    height: 140px;
-    width: 140px;
+    height: 200px;
+    width: 200px;
   }
 
   .image-gallery {

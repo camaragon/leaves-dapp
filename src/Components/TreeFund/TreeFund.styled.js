@@ -57,6 +57,10 @@ export const TwitterLink = styled.a`
   font-weight: bold;
   color: #feeb66;
   text-shadow: 2px 2px 4px #000000;
+
+  @media (max-width: 500px) {
+    font-size: 1.25rem;
+  }
 `;
 
 export const TreeImages = styled.img`
@@ -84,6 +88,9 @@ export const WhiteText = styled.p`
   @media (max-width: 900px) {
     font-size: 150%;
   }
+  @media (max-width: 450px) {
+    font-size: 140%;
+  }
 `;
 
 export const GoldText = styled.p`
@@ -95,5 +102,9 @@ export const GoldText = styled.p`
 
   @media (max-width: 990px) {
     font-size: 150%;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 120%;
   }
 `;
