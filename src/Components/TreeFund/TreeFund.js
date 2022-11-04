@@ -45,7 +45,7 @@ export const TreeFund = () => {
         <Typography
           variant="h3"
           fontWeight="900"
-          fontSize="300%"
+          fontSize="250%"
           color="primary.gold"
           sx={{
             textShadow: "2px 2px 4px #000000",

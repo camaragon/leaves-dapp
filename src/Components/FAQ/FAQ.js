@@ -89,7 +89,7 @@ export const FAQ = () => {
       <Typography
         item
         variant="h2"
-        padding="5% 0 0 0"
+        padding="15% 0 0 0"
         fontWeight="900"
         fontSize="500%"
         color="common.white"
