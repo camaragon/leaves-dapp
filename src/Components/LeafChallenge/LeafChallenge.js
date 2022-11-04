@@ -48,6 +48,7 @@ export const LeafChallenge = () => {
           zIndex="2"
           textAlign="center"
           alignSelf="end"
+          margin="6rem 0 0 0"
         >
           <Typography
             variant="h2"

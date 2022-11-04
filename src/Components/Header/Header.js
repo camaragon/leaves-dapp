@@ -60,7 +60,7 @@ export const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
 
   return (
     <>
-      {windowWidth >= 900 || window.innerWidth >= 900 ? (
+      {windowWidth >= 1200 || window.innerWidth >= 1200 ? (
         <Styled.HeaderContainer>
           <img
             src={leafLogo}
@@ -72,11 +72,9 @@ export const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
           <Stack
             component="nav"
             direction="row"
-            // alignItems="space-around"
             justifyContent="space-around"
             height="20%"
             margin="2rem 0 0 3rem"
-            // spacing={10}
           >
             <Styled.NavLink className="nav-link" href="#welcome">
               Welcome
@@ -97,17 +95,9 @@ export const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
             >
               <img height="23rem" src={twitterIcon} alt="twitter icon" />
             </Styled.IconLink>
-            {/* <Styled.IconLink
-          target="_blank"
-          href="https://opensea.io/"
-          backgroundColor="rgba(255, 252, 237, 0.2)"
-        >
-          <img height="23rem" src={openseaIcon} />
-        </Styled.IconLink> */}
           </Stack>
           <Tooltip
             title="Coming Soon"
-            // arrow
             followCursor
             sx={{
               backgroundColor: "primary.green",
@@ -140,20 +130,7 @@ export const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
       ) : (
         <Styled.HeaderContainer isMobileMenuOpen={isMobileMenuOpen}>
           <Styled.MobileHeader>
-            <img
-              src={leafLogo}
-              alt="leaf logo"
-              height="80rem"
-              width="80rem"
-              // style={{ margin: "0.5rem 0 0 3rem" }}
-            />
-            {/* <Styled.IconLink
-              target="_blank"
-              href="https://twitter.com/_10000_LEAVES_"
-              backgroundColor="rgba(255, 252, 237, 0.2)"
-            >
-              <img height="25rem" src={twitterIcon} alt="twitter icon" />
-            </Styled.IconLink> */}
+            <img src={leafLogo} alt="leaf logo" height="80rem" width="80rem" />
             <Hamburger
               color="white"
               size={40}

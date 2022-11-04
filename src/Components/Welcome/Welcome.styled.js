@@ -12,3 +12,27 @@ export const WelcomeContainer = styled.section`
   height: 80vh;
   width: 100vw;
 `;
+
+export const WelcomeTitle = styled.h1`
+  color: white;
+  font-weight: 900;
+  font-size: 5rem;
+  text-shadow: 2px 2px 4px #000000;
+  margin: 0;
+
+  @media (max-width: 600px) {
+    font-size: 3rem;
+  }
+`;
+
+export const WelcomeSubtitle = styled.p`
+  color: white;
+  font-weight: bold;
+  width: 70%;
+  text-shadow: 2px 2px 4px #000000;
+  font-size: 2rem;
+
+  @media (max-width: 600px) {
+    font-size: 1.5rem;
+  }
+`;

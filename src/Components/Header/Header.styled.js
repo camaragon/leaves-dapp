@@ -12,7 +12,7 @@ export const HeaderContainer = styled.header`
   background-color: transparent;
   transition: 0.5s ease;
 
-  @media (max-width: 900px) {
+  @media (max-width: 1200px) {
     display: grid;
     grid: 1fr / 1fr;
   }

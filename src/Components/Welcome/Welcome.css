@@ -1,4 +1,6 @@
 .image-gallery {
+  display: grid;
+  align-items: center;
   flex-wrap: nowrap;
   width: calc((300px + 2rem) * 53);
   animation: moveGallery 1050s linear 3s infinite;

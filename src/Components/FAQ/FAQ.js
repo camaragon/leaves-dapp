@@ -94,6 +94,7 @@ export const FAQ = () => {
         fontSize="500%"
         color="common.white"
         sx={{ textShadow: "2px 2px 4px #000000" }}
+        zIndex={2}
       >
         FAQ
       </Typography>

@@ -1,4 +1,4 @@
-import { Typography, Button, Stack, Box, Tooltip } from "@mui/material";
+import { Button, Stack, Box, Tooltip } from "@mui/material";
 import "../../index.css";
 import * as Styled from "./Welcome.styled";
 import "./Welcome.css";
@@ -23,25 +23,11 @@ export const Welcome = () => {
         alignItems="center"
         justifyContent="end"
       >
-        <Typography
-          variant="h1"
-          color="common.white"
-          fontWeight="900"
-          sx={{ textShadow: "2px 2px 4px #000000" }}
-        >
-          Welcome to Eden
-        </Typography>
-        <Typography
-          fontSize="2rem"
-          color="common.white"
-          // padding="0 25rem"
-          width="70%"
-          fontWeight="bold"
-          sx={{ textShadow: "2px 2px 4px #000000" }}
-        >
+        <Styled.WelcomeTitle>Welcome to Eden</Styled.WelcomeTitle>
+        <Styled.WelcomeSubtitle>
           10,000 unique artist inspired leaves altered by an advanced AI art
           engine
-        </Typography>
+        </Styled.WelcomeSubtitle>
       </Stack>
       <Box
         display="grid"
@@ -51,7 +37,6 @@ export const Welcome = () => {
       >
         <Tooltip
           title="Coming Soon"
-          // arrow
           followCursor
           sx={{ backgroundColor: "primary.green" }}
         >
