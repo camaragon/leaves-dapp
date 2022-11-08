@@ -2,6 +2,7 @@ import leafLogo from "../../Images/leaf-logo-2.png";
 import { Stack, Button, Tooltip } from "@mui/material";
 import * as Styled from "./Header.styled";
 import twitterIcon from "../../Images/twitter.svg";
+import discordIcon from "../../Images/discord.svg";
 // import openseaIcon from "../../Images/opensea.svg";
 import "./Header.css";
 import { useEffect, useState } from "react";
@@ -10,6 +11,7 @@ import { Squash as Hamburger } from "hamburger-react";
 
 export const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
   const [windowWidth, setWindowWidth] = useState(null);
+  const [isTooltipOpen, setIsTooltipOpen] = useState(true);
 
   const highlightViewportSectionLink = () => {
     const sectionsList = document.querySelectorAll("section");
@@ -58,6 +60,10 @@ export const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
     setIsMobileMenuOpen(false);
   };
 
+  setTimeout(() => {
+    setIsTooltipOpen(false);
+  }, 8000);
+
   return (
     <>
       {windowWidth >= 1200 || window.innerWidth >= 1200 ? (
@@ -74,7 +80,7 @@ export const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
             direction="row"
             justifyContent="space-around"
             height="20%"
-            margin="2rem 0 0 3rem"
+            margin="2rem 0 0 1rem"
           >
             <Styled.NavLink className="nav-link" href="#welcome">
               Welcome
@@ -95,6 +101,23 @@ export const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
             >
               <img height="23rem" src={twitterIcon} alt="twitter icon" />
             </Styled.IconLink>
+            <Tooltip
+              title="Check out the new Discord!"
+              arrow
+              open={isTooltipOpen}
+              // followCursor
+              sx={{
+                backgroundColor: "primary.green",
+              }}
+            >
+              <Styled.IconLink
+                target="_blank"
+                href="https://discord.gg/M94j9Ergy3"
+                backgroundColor="rgba(255, 252, 237, 0.2)"
+              >
+                <img height="23rem" src={discordIcon} alt="discord icon" />
+              </Styled.IconLink>
+            </Tooltip>
           </Stack>
           <Tooltip
             title="Coming Soon"
@@ -174,6 +197,13 @@ export const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
                 backgroundColor="rgba(255, 252, 237, 0.2)"
               >
                 <img height="30rem" src={twitterIcon} alt="twitter icon" />
+              </Styled.MobileIconLink>
+              <Styled.MobileIconLink
+                target="_blank"
+                href="https://discord.gg/M94j9Ergy3"
+                backgroundColor="rgba(255, 252, 237, 0.2)"
+              >
+                <img height="30rem" src={discordIcon} alt="discord icon" />
               </Styled.MobileIconLink>
               <Tooltip
                 title="Coming Soon"

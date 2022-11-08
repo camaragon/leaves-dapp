@@ -85,7 +85,7 @@ export const IconLink = styled.a`
 export const MobileIconLink = styled.a`
   && {
     background-color: rgb(142, 209, 78);
-    padding: 0.5rem 1rem 2.25rem 1rem;
+    padding: 0.5rem 1rem 0.25rem 1rem;
     white-space: nowrap;
     font-size: 1.25em;
     cursor: pointer;
@@ -99,9 +99,9 @@ export const MobileIconLink = styled.a`
       background-color: rgb(142, 209, 78);
     }
 
-    @media (max-width: 900px) {
-      height: 0;
-    }
+    // @media (max-width: 900px) {
+    //   height: 0;
+    // }
   }
 `;
 
