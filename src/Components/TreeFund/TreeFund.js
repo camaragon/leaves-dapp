@@ -73,7 +73,7 @@ export const TreeFund = () => {
             <Styled.WhiteText>
               A community fund that will grow as we grow. Every project we work
               on will expand our vision and add a cut to this origin fund
-              starting with 25 Eth from Leaves
+              starting with Eth from Leaves
             </Styled.WhiteText>
             {scroll >= 12 && (
               <Styled.GoldText>

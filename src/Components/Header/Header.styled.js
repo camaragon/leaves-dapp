@@ -120,5 +120,5 @@ export const MobileMenu = styled.section`
   justify-content: start;
   height: 88vh;
   z-index: 90;
-  padding: 3rem 0 0 0;
+  padding: 2rem 0 0 0;
 `;

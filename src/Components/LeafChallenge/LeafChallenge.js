@@ -59,13 +59,13 @@ export const LeafChallenge = () => {
               backgroundColor: "transparent",
               textShadow: "2px 2px 4px #000000",
             }}
+            zIndex={1}
           >
             The Leaf Challenge
           </Typography>
           <Typography
             fontSize="1.5rem"
             fontWeight="900"
-            width="75%"
             color="common.white"
             sx={{
               backdropFilter: "blur(10px)",
