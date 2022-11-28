@@ -1,13 +1,18 @@
-import { Button, Stack, Box, Tooltip } from "@mui/material";
+import { Button, Stack, Box } from "@mui/material";
 import "../../index.css";
 import * as Styled from "./Welcome.styled";
 import "./Welcome.css";
+import { useDispatch } from "react-redux";
+import { connect } from "../../redux/blockchain/blockchainActions";
+import { useNavigate } from "react-router-dom";
 
 function importAll(r) {
   return r.keys().map(r);
 }
 
-export const Welcome = () => {
+export const Welcome = ({ blockchain, getData }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const images = importAll(require.context("../../Images/nft-images", false));
 
   const shuffledImages = images
@@ -25,8 +30,7 @@ export const Welcome = () => {
       >
         <Styled.WelcomeTitle>Welcome to Eden</Styled.WelcomeTitle>
         <Styled.WelcomeSubtitle>
-          10,000 unique artist inspired leaves altered by an advanced AI art
-          engine
+          10,000 unique artist inspired leaves altered by DALL-E
         </Styled.WelcomeSubtitle>
       </Stack>
       <Box
@@ -35,15 +39,31 @@ export const Welcome = () => {
         alignItems="center"
         justifyContent="center"
       >
-        <Tooltip
-          title="Coming Soon"
-          followCursor
-          sx={{ backgroundColor: "primary.green" }}
-        >
-          <span style={{ width: "12rem", height: "5rem" }}>
+        <span style={{ width: "12rem", height: "5rem" }}>
+          {blockchain.account === "" || blockchain.smartContract === null ? (
             <Button
               variant="contained"
-              disabled
+              onClick={(e) => {
+                dispatch(connect());
+                getData();
+              }}
+              sx={{
+                backgroundColor: "#8ED14E",
+                width: "100%",
+                height: "100%",
+                justifySelf: "center",
+                alignSelf: "center",
+                fontWeight: "bold",
+                fontFamily: "EB Garamond",
+                borderRadius: "5rem",
+              }}
+            >
+              Connect Wallet
+            </Button>
+          ) : (
+            <Button
+              variant="contained"
+              onClick={() => navigate("/mint")}
               sx={{
                 backgroundColor: "#8ED14E",
                 width: "100%",
@@ -57,8 +77,8 @@ export const Welcome = () => {
             >
               Mint
             </Button>
-          </span>
-        </Tooltip>
+          )}
+        </span>
       </Box>
       <Stack direction="row" className="image-gallery" spacing={5}>
         {shuffledImages.map((image, index) => (

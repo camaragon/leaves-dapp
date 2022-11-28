@@ -9,7 +9,7 @@ export const FAQ = () => {
     {
       question: "What are LEAVES?",
       answer:
-        "10,000 LEAVES is the Prelude to our Web3 adventure. These LEAVES were hand drawn then altered with keywords to generate the backgrounds through AI interpretation. Collecting one leaf grants holders a guaranteed mint for our main drop in December. ",
+        "10,000 LEAVES is the Prelude to our Web3 adventure. These LEAVES were hand drawn then altered with keywords to generate the backgrounds through AI interpretation using DALL-E. Collecting one leaf grants holders a guaranteed mint for our main drop in December. ",
       open: false,
     },
     {
@@ -20,12 +20,13 @@ export const FAQ = () => {
     },
     {
       question: "How many are available?",
-      answer: "10,000 LEAVES will be available.",
+      answer:
+        "5,000 LEAVES will be available on the L1 Ethereum network. The rest will be dropped on Myria at a later date.",
       open: false,
     },
     {
       question: "What will be the mint price of a NFT?",
-      answer: "Each leaf will cost around 0.015 Eth.",
+      answer: "Each leaf will cost around 0.005 Eth.",
       open: false,
     },
     {

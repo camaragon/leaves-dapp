@@ -8,11 +8,20 @@ import "./Header.css";
 import { useEffect, useState } from "react";
 import { Squash as Hamburger } from "hamburger-react";
 // import MenuIcon from "@mui/icons-material/Menu";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { connect } from "../../redux/blockchain/blockchainActions";
 
-export const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
+export const Header = ({
+  blockchain,
+  getData,
+  isMobileMenuOpen,
+  setIsMobileMenuOpen,
+}) => {
   const [windowWidth, setWindowWidth] = useState(null);
   const [isTooltipOpen, setIsTooltipOpen] = useState(true);
-
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const highlightViewportSectionLink = () => {
     const sectionsList = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(`nav > a`);
@@ -73,43 +82,48 @@ export const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
             alt="leaf logo"
             height="80rem"
             width="80rem"
-            style={{ margin: "0.5rem 0 0 3rem" }}
+            style={{
+              margin: "0.5rem 0 0 3rem",
+              ":hover": { cursor: "pointer" },
+            }}
+            onClick={() => navigate("/")}
           />
-          <Stack
-            component="nav"
-            direction="row"
-            justifyContent="space-around"
-            height="20%"
-            margin="2rem 0 0 1rem"
-          >
-            <Styled.NavLink className="nav-link" href="#welcome">
-              Welcome
-            </Styled.NavLink>
-            <Styled.NavLink className="nav-link" href="#leaf-challenge">
-              Leaf Challenge
-            </Styled.NavLink>
-            <Styled.NavLink className="nav-link" href="#tree-fund">
-              Tree Fund
-            </Styled.NavLink>
-            <Styled.NavLink className="nav-link" href="#faq">
-              FAQ
-            </Styled.NavLink>
-            <Styled.IconLink
-              target="_blank"
-              href="https://twitter.com/_10000_LEAVES_"
-              backgroundColor="rgba(255, 252, 237, 0.2)"
+          {window.location.pathname !== "/mint" && (
+            <Stack
+              component="nav"
+              direction="row"
+              justifyContent="space-around"
+              height="20%"
+              margin="2rem 0 0 1rem"
             >
-              <img height="23rem" src={twitterIcon} alt="twitter icon" />
-            </Styled.IconLink>
-            <Tooltip
-              title="Check out the new Discord!"
-              arrow
-              open={isTooltipOpen}
-              // followCursor
-              sx={{
-                backgroundColor: "primary.green",
-              }}
-            >
+              <Styled.NavLink className="nav-link" href="#welcome">
+                Welcome
+              </Styled.NavLink>
+              <Styled.NavLink className="nav-link" href="#leaf-challenge">
+                Leaf Challenge
+              </Styled.NavLink>
+              <Styled.NavLink className="nav-link" href="#tree-fund">
+                Tree Fund
+              </Styled.NavLink>
+              <Styled.NavLink className="nav-link" href="#faq">
+                FAQ
+              </Styled.NavLink>
+              <Styled.IconLink
+                target="_blank"
+                href="https://twitter.com/_10000_LEAVES_"
+                backgroundColor="rgba(255, 252, 237, 0.2)"
+              >
+                <img height="23rem" src={twitterIcon} alt="twitter icon" />
+              </Styled.IconLink>
+              {/* <Tooltip
+                title="Check out the new Discord!"
+                arrow
+                open={isTooltipOpen}
+                // followCursor
+                sx={{
+                  backgroundColor: "primary.green",
+                }}
+              > */}
               <Styled.IconLink
                 target="_blank"
                 href="https://discord.gg/M94j9Ergy3"
@@ -117,43 +131,76 @@ export const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
               >
                 <img height="23rem" src={discordIcon} alt="discord icon" />
               </Styled.IconLink>
-            </Tooltip>
-          </Stack>
-          <Tooltip
-            title="Coming Soon"
-            followCursor
-            sx={{
-              backgroundColor: "primary.green",
-            }}
-          >
-            <span
-              style={{
+              {/* </Tooltip> */}
+            </Stack>
+          )}
+          {blockchain.account === "" || blockchain.smartContract === null ? (
+            <Button
+              variant="contained"
+              onClick={(e) => {
+                dispatch(connect());
+                getData();
+              }}
+              sx={{
+                backgroundColor: "#8ED14E",
                 width: "10rem",
                 height: "3rem",
-                justifySelf: "center",
+                fontWeight: "bold",
+                fontFamily: "EB Garamond",
                 margin: "2rem 0 0 0",
+                justifySelf: "center",
               }}
             >
-              <Button
-                variant="contained"
-                disabled
-                sx={{
-                  backgroundColor: "#8ED14E",
-                  width: "10rem",
-                  height: "3rem",
-                  fontWeight: "bold",
-                  fontFamily: "EB Garamond",
-                }}
-              >
-                Connect Wallet
-              </Button>
-            </span>
-          </Tooltip>
+              Connect Wallet
+            </Button>
+          ) : (
+            <>
+              {window.location.pathname !== "/mint" ? (
+                <Button
+                  variant="contained"
+                  onClick={() => navigate("/mint")}
+                  sx={{
+                    backgroundColor: "#8ED14E",
+                    width: "10rem",
+                    height: "3rem",
+                    fontWeight: "bold",
+                    fontFamily: "EB Garamond",
+                    margin: "2rem 0 0 0",
+                    justifySelf: "center",
+                  }}
+                >
+                  Mint
+                </Button>
+              ) : (
+                <Button
+                  variant="contained"
+                  onClick={() => navigate("/")}
+                  sx={{
+                    backgroundColor: "#8ED14E",
+                    width: "10rem",
+                    height: "3rem",
+                    fontWeight: "bold",
+                    fontFamily: "EB Garamond",
+                    margin: "2rem 0 0 0",
+                    justifySelf: "center",
+                  }}
+                >
+                  Back Home
+                </Button>
+              )}
+            </>
+          )}
         </Styled.HeaderContainer>
       ) : (
         <Styled.HeaderContainer isMobileMenuOpen={isMobileMenuOpen}>
           <Styled.MobileHeader>
-            <img src={leafLogo} alt="leaf logo" height="80rem" width="80rem" />
+            <img
+              onClick={() => navigate("/")}
+              src={leafLogo}
+              alt="leaf logo"
+              height="80rem"
+              width="80rem"
+            />
             <Hamburger
               color="white"
               size={40}
