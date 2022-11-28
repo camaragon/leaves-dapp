@@ -1,0 +1,18 @@
+{
+  "CONTRACT_ADDRESS": "0xdF8B4eA55C76cB8D75798E6C109401359a0D3A19",
+  "SCAN_LINK": "https://etherscan.io/address/0xdF8B4eA55C76cB8D75798E6C109401359a0D3A19",
+  "NETWORK": {
+    "NAME": "Ethereum",
+    "SYMBOL": "Eth",
+    "ID": 1
+  },
+  "NFT_NAME": "10000 LEAVES",
+  "SYMBOL": "LEAF",
+  "MAX_SUPPLY": 5000,
+  "WEI_COST": 75000000000000000,
+  "DISPLAY_COST": 0.005,
+  "GAS_LIMIT": 285000,
+  "MARKETPLACE": "OpenSea",
+  "MARKETPLACE_LINK": "https://opensea.io/",
+  "SHOW_BACKGROUND": true
+}
