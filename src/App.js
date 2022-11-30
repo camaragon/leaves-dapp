@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "./redux/data/dataActions";
 import { Routes, Route } from "react-router-dom";
-// import { Whitepaper } from "./Components/Whitepaper";
+import { Whitepaper } from "./Components/Whitepaper";
 
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -116,17 +116,17 @@ function App() {
         width: "100vw",
       }}
     >
-      <Header
-        blockchain={blockchain}
-        getData={getData}
-        isMobileMenuOpen={isMobileMenuOpen}
-        setIsMobileMenuOpen={setIsMobileMenuOpen}
-      />
       <Routes>
         <Route
           path="/"
           element={
             <>
+              <Header
+                blockchain={blockchain}
+                getData={getData}
+                isMobileMenuOpen={isMobileMenuOpen}
+                setIsMobileMenuOpen={setIsMobileMenuOpen}
+              />
               <Homepage />
               <Welcome blockchain={blockchain} getData={getData} />
               <LeafChallenge />
@@ -138,19 +138,27 @@ function App() {
         <Route
           path="/mint"
           element={
-            <Mint
-              blockchain={blockchain}
-              claimNFTs={claimNFTs}
-              claimingNft={claimingNft}
-              CONFIG={CONFIG}
-              data={data}
-              feedback={feedback}
-              mintAmount={mintAmount}
-              setMintAmount={setMintAmount}
-            />
+            <>
+              <Header
+                blockchain={blockchain}
+                getData={getData}
+                isMobileMenuOpen={isMobileMenuOpen}
+                setIsMobileMenuOpen={setIsMobileMenuOpen}
+              />
+              <Mint
+                blockchain={blockchain}
+                claimNFTs={claimNFTs}
+                claimingNft={claimingNft}
+                CONFIG={CONFIG}
+                data={data}
+                feedback={feedback}
+                mintAmount={mintAmount}
+                setMintAmount={setMintAmount}
+              />
+            </>
           }
         />
-        {/* <Route path="/whitepaper" element={<Whitepaper />} /> */}
+        <Route path="/whitepaper" element={<Whitepaper />} />
       </Routes>
       <Footer />
     </main>
