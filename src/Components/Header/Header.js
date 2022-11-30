@@ -95,6 +95,7 @@ export const Header = ({
               justifyContent="space-around"
               height="20%"
               margin="2rem 0 0 1rem"
+              spacing={2}
             >
               <Styled.NavLink className="nav-link" href="#welcome">
                 Welcome
@@ -107,6 +108,9 @@ export const Header = ({
               </Styled.NavLink>
               <Styled.NavLink className="nav-link" href="#faq">
                 FAQ
+              </Styled.NavLink>
+              <Styled.NavLink className="nav-link" href="/whitepaper">
+                Whitepaper
               </Styled.NavLink>
               <Styled.IconLink
                 target="_blank"
