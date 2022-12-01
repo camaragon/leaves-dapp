@@ -80,7 +80,7 @@ export const Whitepaper = () => {
         <Document
           onLoadError={console.error}
           onLoadSuccess={onDocumentLoadSuccess}
-          file={"/Leaf_Paper.pdf"}
+          file={"/leaf_paper.pdf"}
         >
           <Page
             pageNumber={pageNumber}
