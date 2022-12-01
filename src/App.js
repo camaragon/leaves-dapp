@@ -107,8 +107,6 @@ function App() {
     getData();
   }, [blockchain.account]);
 
-  console.log(blockchain);
-
   return (
     <main
       style={{
@@ -158,7 +156,7 @@ function App() {
             </>
           }
         />
-        <Route exact path="/whitepaper" element={<Whitepaper />} />
+        <Route path="/whitepaper" element={<Whitepaper />} />
       </Routes>
       <Footer />
     </main>
