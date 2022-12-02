@@ -156,7 +156,7 @@ function App() {
             </>
           }
         />
-        <Route path="/whitepaper" element={<Whitepaper />} />
+        {/* <Route path="/whitepaper" element={<Whitepaper />} /> */}
       </Routes>
       <Footer />
     </main>

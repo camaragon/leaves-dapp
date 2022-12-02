@@ -109,9 +109,23 @@ export const Header = ({
               <Styled.NavLink className="nav-link" href="#faq">
                 FAQ
               </Styled.NavLink>
-              <Styled.NavLink className="nav-link" href="/whitepaper">
-                Whitepaper
-              </Styled.NavLink>
+              <Tooltip
+                title="Check out the LeafPaper V1"
+                arrow
+                open={isTooltipOpen}
+                // followCursor
+                sx={{
+                  backgroundColor: "primary.green",
+                }}
+              >
+                <Styled.NavLink
+                  className="nav-link"
+                  href="https://pdfhost.io/v/x6gCrTzsc_10000LEAVES_Whitepaper"
+                  target="_blank"
+                >
+                  LeafPaper
+                </Styled.NavLink>
+              </Tooltip>
               <Styled.IconLink
                 target="_blank"
                 href="https://twitter.com/_10000_LEAVES_"
@@ -119,15 +133,7 @@ export const Header = ({
               >
                 <img height="23rem" src={twitterIcon} alt="twitter icon" />
               </Styled.IconLink>
-              {/* <Tooltip
-                title="Check out the new Discord!"
-                arrow
-                open={isTooltipOpen}
-                // followCursor
-                sx={{
-                  backgroundColor: "primary.green",
-                }}
-              > */}
+
               <Styled.IconLink
                 target="_blank"
                 href="https://discord.gg/M94j9Ergy3"
@@ -135,7 +141,6 @@ export const Header = ({
               >
                 <img height="23rem" src={discordIcon} alt="discord icon" />
               </Styled.IconLink>
-              {/* </Tooltip> */}
             </Stack>
           )}
           {blockchain.account === "" || blockchain.smartContract === null ? (

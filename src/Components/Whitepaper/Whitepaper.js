@@ -76,7 +76,6 @@ export const Whitepaper = () => {
             <AddIcon />
           </IconButton>
         </Stack>
-
         <Document
           onLoadError={console.error}
           onLoadSuccess={onDocumentLoadSuccess}
