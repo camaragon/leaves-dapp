@@ -11,24 +11,9 @@ module.exports = function override(config) {
     url: require.resolve("url"),
   });
   config.resolve.fallback = fallback;
-
-  // Fix for ESM modules that reference 'process/browser' without extension
-  config.resolve.alias = {
-    ...(config.resolve.alias || {}),
-    "process/browser": require.resolve("process/browser.js"),
-  };
-
-  // Ensure .mjs files are handled properly
-  config.module.rules.push({
-    test: /\.m?js$/,
-    resolve: {
-      fullySpecified: false,
-    },
-  });
-
   config.plugins = (config.plugins || []).concat([
     new webpack.ProvidePlugin({
-      process: "process/browser.js",
+      process: "process/browser",
       Buffer: ["buffer", "Buffer"],
     }),
   ]);

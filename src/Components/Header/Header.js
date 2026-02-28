@@ -3,11 +3,14 @@ import { Stack, Button, Tooltip } from "@mui/material";
 import * as Styled from "./Header.styled";
 import twitterIcon from "../../Images/twitter.svg";
 import discordIcon from "../../Images/discord.svg";
+// import openseaIcon from "../../Images/opensea.svg";
 import "./Header.css";
 import { useEffect, useState } from "react";
 import { Squash as Hamburger } from "hamburger-react";
+// import MenuIcon from "@mui/icons-material/Menu";
 import { useNavigate } from "react-router-dom";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { useDispatch } from "react-redux";
+import { connect } from "../../redux/blockchain/blockchainActions";
 
 export const Header = ({
   blockchain,
@@ -18,20 +21,26 @@ export const Header = ({
   const [windowWidth, setWindowWidth] = useState(null);
   const [isTooltipOpen, setIsTooltipOpen] = useState(true);
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   const highlightViewportSectionLink = () => {
     const sectionsList = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(`nav > a`);
     sectionsList.forEach((section, index) => {
+      /* does not include the first section */
       if (index > 0 && navLinks.length > 1) {
+        /* coordinates of the section */
         const coord = section.getBoundingClientRect();
+
         const relevantLink = navLinks[index - 1];
+
         const addActiveSessionInfo = () => {
           relevantLink.classList.add("active-link");
         };
+
         const removeActiveSessionInfo = () => {
           relevantLink.classList.remove("active-link");
         };
+
         if (coord.top < window.innerHeight / 2 && coord.top > 0) {
           addActiveSessionInfo();
         } else if (coord.top > window.innerHeight / 2) {
@@ -52,6 +61,7 @@ export const Header = ({
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
+
     window.addEventListener("resize", handleResize);
   });
 
@@ -62,8 +72,6 @@ export const Header = ({
   setTimeout(() => {
     setIsTooltipOpen(false);
   }, 8000);
-
-  const isConnected = blockchain.account !== "" && blockchain.smartContract !== null;
 
   return (
     <>
@@ -105,7 +113,10 @@ export const Header = ({
                 title="Check out the LeafPaper V1"
                 arrow
                 open={isTooltipOpen}
-                sx={{ backgroundColor: "primary.green" }}
+                // followCursor
+                sx={{
+                  backgroundColor: "primary.green",
+                }}
               >
                 <Styled.NavLink
                   className="nav-link"
@@ -122,6 +133,7 @@ export const Header = ({
               >
                 <img height="23rem" src={twitterIcon} alt="twitter icon" />
               </Styled.IconLink>
+
               <Styled.IconLink
                 target="_blank"
                 href="https://discord.gg/M94j9Ergy3"
@@ -131,39 +143,62 @@ export const Header = ({
               </Styled.IconLink>
             </Stack>
           )}
-          <div style={{ margin: "1.5rem 1rem 0 0" }}>
-            {isConnected && window.location.pathname !== "/mint" ? (
-              <Button
-                variant="contained"
-                onClick={() => navigate("/mint")}
-                sx={{
-                  backgroundColor: "#8ED14E",
-                  width: "10rem",
-                  height: "3rem",
-                  fontWeight: "bold",
-                  fontFamily: "EB Garamond",
-                }}
-              >
-                Mint
-              </Button>
-            ) : isConnected && window.location.pathname === "/mint" ? (
-              <Button
-                variant="contained"
-                onClick={() => navigate("/")}
-                sx={{
-                  backgroundColor: "#8ED14E",
-                  width: "10rem",
-                  height: "3rem",
-                  fontWeight: "bold",
-                  fontFamily: "EB Garamond",
-                }}
-              >
-                Back Home
-              </Button>
-            ) : (
-              <ConnectButton />
-            )}
-          </div>
+          {blockchain.account === "" || blockchain.smartContract === null ? (
+            <Button
+              variant="contained"
+              onClick={(e) => {
+                dispatch(connect());
+                getData();
+              }}
+              sx={{
+                backgroundColor: "#8ED14E",
+                width: "10rem",
+                height: "3rem",
+                fontWeight: "bold",
+                fontFamily: "EB Garamond",
+                margin: "2rem 0 0 0",
+                justifySelf: "center",
+              }}
+            >
+              Connect Wallet
+            </Button>
+          ) : (
+            <>
+              {window.location.pathname !== "/mint" ? (
+                <Button
+                  variant="contained"
+                  onClick={() => navigate("/mint")}
+                  sx={{
+                    backgroundColor: "#8ED14E",
+                    width: "10rem",
+                    height: "3rem",
+                    fontWeight: "bold",
+                    fontFamily: "EB Garamond",
+                    margin: "2rem 0 0 0",
+                    justifySelf: "center",
+                  }}
+                >
+                  Mint
+                </Button>
+              ) : (
+                <Button
+                  variant="contained"
+                  onClick={() => navigate("/")}
+                  sx={{
+                    backgroundColor: "#8ED14E",
+                    width: "10rem",
+                    height: "3rem",
+                    fontWeight: "bold",
+                    fontFamily: "EB Garamond",
+                    margin: "2rem 0 0 0",
+                    justifySelf: "center",
+                  }}
+                >
+                  Back Home
+                </Button>
+              )}
+            </>
+          )}
         </Styled.HeaderContainer>
       ) : (
         <Styled.HeaderContainer isMobileMenuOpen={isMobileMenuOpen}>
@@ -226,9 +261,37 @@ export const Header = ({
               >
                 <img height="30rem" src={discordIcon} alt="discord icon" />
               </Styled.MobileIconLink>
-              <div style={{ margin: "1rem 0 0 0", display: "flex", justifyContent: "center" }}>
-                <ConnectButton />
-              </div>
+              <Tooltip
+                title="Coming Soon"
+                // arrow
+                followCursor
+                sx={{
+                  backgroundColor: "primary.green",
+                }}
+              >
+                <span
+                  style={{
+                    width: "272px",
+                    height: "3rem",
+                    justifySelf: "center",
+                    margin: "1rem 0 0 0",
+                  }}
+                >
+                  <Button
+                    variant="contained"
+                    disabled
+                    sx={{
+                      backgroundColor: "#8ED14E",
+                      width: "272px",
+                      height: "3rem",
+                      fontWeight: "bold",
+                      fontFamily: "EB Garamond",
+                    }}
+                  >
+                    Connect Wallet
+                  </Button>
+                </span>
+              </Tooltip>
             </Styled.MobileMenu>
           )}
         </Styled.HeaderContainer>

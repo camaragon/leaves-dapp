@@ -7,31 +7,6 @@ import { createTheme, ThemeProvider } from "@mui/material";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider as ReduxProvider } from "react-redux";
 import store from "./redux/store";
-import { Web3Provider } from "./Web3Provider";
-
-class ErrorBoundary extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { hasError: false, error: null };
-  }
-  static getDerivedStateFromError(error) {
-    return { hasError: true, error };
-  }
-  componentDidCatch(error, info) {
-    console.error("ErrorBoundary caught:", error, info);
-  }
-  render() {
-    if (this.state.hasError) {
-      return (
-        <div style={{ color: "white", padding: "40px", fontFamily: "monospace", backgroundColor: "#0CA789", minHeight: "100vh" }}>
-          <h1>Something went wrong</h1>
-          <pre style={{ whiteSpace: "pre-wrap" }}>{String(this.state.error)}</pre>
-        </div>
-      );
-    }
-    return this.props.children;
-  }
-}
 
 const theme = createTheme({
   palette: {
@@ -66,18 +41,17 @@ const theme = createTheme({
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <ErrorBoundary>
-      <Web3Provider>
-        <ReduxProvider store={store}>
-          <ThemeProvider theme={theme}>
-            <Router>
-              <App />
-            </Router>
-          </ThemeProvider>
-        </ReduxProvider>
-      </Web3Provider>
-    </ErrorBoundary>
+    <ReduxProvider store={store}>
+      <ThemeProvider theme={theme}>
+        <Router>
+          <App />
+        </Router>
+      </ThemeProvider>
+    </ReduxProvider>
   </React.StrictMode>
 );
 
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

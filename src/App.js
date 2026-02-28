@@ -9,27 +9,28 @@ import {
   Welcome,
 } from "./Components";
 import "./index.css";
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "./redux/data/dataActions";
 import { Routes, Route } from "react-router-dom";
-import { useAccount } from "wagmi";
-// wagmi v1: useAccount returns { address, isConnected }
-import Web3 from "web3";
-import Web3EthContract from "web3-eth-contract";
+// import { Whitepaper } from "./Components/Whitepaper";
 
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const dispatch = useDispatch();
+  const blockchain = useSelector((state) => state.blockchain);
   const data = useSelector((state) => state.data);
   const [claimingNft, setClaimingNft] = useState(false);
-  const [feedback, setFeedback] = useState("Click buy to mint your LEAVES.");
+  const [feedback, setFeedback] = useState(`Click buy to mint your LEAVES.`);
   const [mintAmount, setMintAmount] = useState(1);
-  const [abi, setAbi] = useState(null);
   const [CONFIG, SET_CONFIG] = useState({
     CONTRACT_ADDRESS: "",
     SCAN_LINK: "",
-    NETWORK: { NAME: "", SYMBOL: "", ID: 0 },
+    NETWORK: {
+      NAME: "",
+      SYMBOL: "",
+      ID: 0,
+    },
     NFT_NAME: "",
     SYMBOL: "",
     MAX_SUPPLY: 1,
@@ -41,28 +42,6 @@ function App() {
     SHOW_BACKGROUND: false,
   });
 
-  const { address, isConnected } = useAccount();
-
-  // Build a blockchain-like object for child components (backwards compat)
-  const smartContract = useMemo(() => {
-    if (!isConnected || !abi || !CONFIG.CONTRACT_ADDRESS || !window.ethereum) return null;
-    Web3EthContract.setProvider(window.ethereum);
-    return new Web3EthContract(abi, CONFIG.CONTRACT_ADDRESS);
-  }, [isConnected, abi, CONFIG.CONTRACT_ADDRESS]);
-
-  const web3 = useMemo(() => {
-    if (!isConnected || !window.ethereum) return null;
-    return new Web3(window.ethereum);
-  }, [isConnected]);
-
-  const blockchain = useMemo(() => ({
-    account: isConnected ? address : "",
-    smartContract,
-    web3,
-    errorMsg: "",
-    loading: false,
-  }), [isConnected, address, smartContract, web3]);
-
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.getElementById("html").style.overflowY = "hidden";
@@ -72,19 +51,20 @@ function App() {
   }, [isMobileMenuOpen]);
 
   const claimNFTs = () => {
-    if (!smartContract) return;
     let cost = CONFIG.WEI_COST;
     let gasLimit = CONFIG.GAS_LIMIT;
     let totalCostWei = String(cost * mintAmount);
     let totalGasLimit = String(gasLimit * mintAmount);
-    setFeedback("Minting your LEAVES...");
+    console.log("Cost: ", totalCostWei);
+    console.log("Gas limit: ", totalGasLimit);
+    setFeedback(`Minting your LEAVES...`);
     setClaimingNft(true);
-    smartContract.methods
+    blockchain.smartContract.methods
       .mint(mintAmount)
       .send({
         gasLimit: String(totalGasLimit),
         to: CONFIG.CONTRACT_ADDRESS,
-        from: address,
+        from: blockchain.account,
         value: totalCostWei,
       })
       .once("error", (err) => {
@@ -94,54 +74,46 @@ function App() {
       })
       .then((receipt) => {
         console.log(receipt);
-        setFeedback("You caught some LEAVES! Go visit Opensea.io to view it.");
+        setFeedback(`You caught some LEAVES! Go visit Opensea.io to view it.`);
         setClaimingNft(false);
-        dispatch(fetchData());
+        dispatch(fetchData(blockchain.account));
       });
   };
 
   const getData = () => {
-    if (isConnected && smartContract) {
-      dispatch(fetchData());
+    if (blockchain.account !== "" && blockchain.smartContract !== null) {
+      dispatch(fetchData(blockchain.account));
     }
   };
 
   const getConfig = async () => {
-    const [configRes, abiRes] = await Promise.all([
-      fetch("/config/config.json", { headers: { "Content-Type": "application/json", Accept: "application/json" } }),
-      fetch("/config/abi.json", { headers: { "Content-Type": "application/json", Accept: "application/json" } }),
-    ]);
-    const config = await configRes.json();
-    const abiData = await abiRes.json();
+    const configResponse = await fetch("/config/config.json", {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    });
+    const config = await configResponse.json();
     SET_CONFIG(config);
-    setAbi(abiData);
   };
 
   useEffect(() => {
+    console.log("GET CONFIG");
     getConfig();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []);
 
-  // Sync wagmi state into Redux so data actions can access the contract
   useEffect(() => {
-    dispatch({
-      type: "CONNECTION_SUCCESS",
-      payload: {
-        account: isConnected ? address : "",
-        smartContract: smartContract,
-        web3: web3,
-      },
-    });
-  }, [isConnected, address, smartContract, web3, dispatch]);
-
-  // Fetch contract data when account connects or contract is ready
-  useEffect(() => {
-    if (isConnected && smartContract) {
-      dispatch(fetchData());
-    }
-  }, [isConnected, smartContract, dispatch]);
+    console.log("HELLO");
+    getData();
+  }, [blockchain.account]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <main style={{ backgroundColor: "#0CA789", width: "100vw" }}>
+    <main
+      style={{
+        backgroundColor: "#0CA789",
+        width: "100vw",
+      }}
+    >
       <Routes>
         <Route
           path="/"
@@ -184,6 +156,7 @@ function App() {
             </>
           }
         />
+        {/* <Route path="/whitepaper" element={<Whitepaper />} /> */}
       </Routes>
       <Footer />
     </main>
