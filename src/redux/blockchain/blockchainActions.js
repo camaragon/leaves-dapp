@@ -75,7 +75,7 @@ export const connect = () => {
             method: "net_version",
           });
           console.log("[LEAVES] Network ID:", networkId, "Expected:", CONFIG.NETWORK.ID);
-          if (networkId == CONFIG.NETWORK.ID) {
+          if (networkId === String(CONFIG.NETWORK.ID)) {
             const SmartContractObj = new Web3EthContract(
               abi,
               CONFIG.CONTRACT_ADDRESS

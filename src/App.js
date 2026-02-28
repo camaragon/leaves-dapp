@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "./redux/data/dataActions";
 import { Routes, Route } from "react-router-dom";
-import { Whitepaper } from "./Components/Whitepaper";
+// import { Whitepaper } from "./Components/Whitepaper";
 
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -105,7 +105,7 @@ function App() {
   useEffect(() => {
     console.log("HELLO");
     getData();
-  }, [blockchain.account]);
+  }, [blockchain.account]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <main
