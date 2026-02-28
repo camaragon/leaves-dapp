@@ -33,6 +33,11 @@ export const Welcome = ({ blockchain, getData }) => {
           10,000 unique artist inspired leaves altered by DALL-E
         </Styled.WelcomeSubtitle>
       </Stack>
+      {blockchain.errorMsg !== "" && (
+        <p style={{ color: "white", textAlign: "center", fontFamily: "EB Garamond", fontSize: "1.2rem", backgroundColor: "rgba(0,0,0,0.5)", padding: "10px", borderRadius: "8px", margin: "10px 20px" }}>
+          ⚠️ {blockchain.errorMsg}
+        </p>
+      )}
       <Box
         display="grid"
         width="100vw"

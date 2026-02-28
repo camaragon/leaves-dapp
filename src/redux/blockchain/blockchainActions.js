@@ -33,63 +33,81 @@ const updateAccountRequest = (payload) => {
 
 export const connect = () => {
   return async (dispatch) => {
-    dispatch(connectRequest());
-    console.log("Connect wallet clicked");
-    console.log("ethereum:", window.ethereum, "isMetaMask:", window.ethereum?.isMetaMask);
-    const abiResponse = await fetch("/config/abi.json", {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    });
-    const abi = await abiResponse.json();
-    const configResponse = await fetch("/config/config.json", {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    });
-    const CONFIG = await configResponse.json();
-    const { ethereum } = window;
-    const metamaskIsInstalled = ethereum && ethereum.isMetaMask;
-    if (metamaskIsInstalled) {
-      Web3EthContract.setProvider(ethereum);
-      let web3 = new Web3(ethereum);
-      try {
-        const accounts = await ethereum.request({
-          method: "eth_requestAccounts",
-        });
-        const networkId = await ethereum.request({
-          method: "net_version",
-        });
-        if (networkId == CONFIG.NETWORK.ID) {
-          const SmartContractObj = new Web3EthContract(
-            abi,
-            CONFIG.CONTRACT_ADDRESS
-          );
-          dispatch(
-            connectSuccess({
-              account: accounts[0],
-              smartContract: SmartContractObj,
-              web3: web3,
-            })
-          );
-          // Add listeners start
-          ethereum.on("accountsChanged", (accounts) => {
-            dispatch(updateAccount(accounts[0]));
+    try {
+      dispatch(connectRequest());
+      console.log("[LEAVES] Connect wallet clicked");
+      console.log("[LEAVES] window.ethereum:", window.ethereum);
+      console.log("[LEAVES] isMetaMask:", window.ethereum?.isMetaMask);
+      
+      const abiResponse = await fetch("/config/abi.json", {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      });
+      console.log("[LEAVES] abi fetch status:", abiResponse.status);
+      const abi = await abiResponse.json();
+      
+      const configResponse = await fetch("/config/config.json", {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      });
+      console.log("[LEAVES] config fetch status:", configResponse.status);
+      const CONFIG = await configResponse.json();
+      console.log("[LEAVES] CONFIG:", CONFIG);
+      
+      const { ethereum } = window;
+      const metamaskIsInstalled = ethereum && ethereum.isMetaMask;
+      console.log("[LEAVES] metamaskIsInstalled:", metamaskIsInstalled);
+      
+      if (metamaskIsInstalled) {
+        Web3EthContract.setProvider(ethereum);
+        let web3 = new Web3(ethereum);
+        try {
+          console.log("[LEAVES] Requesting accounts...");
+          const accounts = await ethereum.request({
+            method: "eth_requestAccounts",
           });
-          ethereum.on("chainChanged", () => {
-            window.location.reload();
+          console.log("[LEAVES] Accounts:", accounts);
+          const networkId = await ethereum.request({
+            method: "net_version",
           });
-          // Add listeners end
-        } else {
-          dispatch(connectFailed(`Change network to ${CONFIG.NETWORK.NAME}.`));
+          console.log("[LEAVES] Network ID:", networkId, "Expected:", CONFIG.NETWORK.ID);
+          if (networkId == CONFIG.NETWORK.ID) {
+            const SmartContractObj = new Web3EthContract(
+              abi,
+              CONFIG.CONTRACT_ADDRESS
+            );
+            dispatch(
+              connectSuccess({
+                account: accounts[0],
+                smartContract: SmartContractObj,
+                web3: web3,
+              })
+            );
+            ethereum.on("accountsChanged", (accounts) => {
+              dispatch(updateAccount(accounts[0]));
+            });
+            ethereum.on("chainChanged", () => {
+              window.location.reload();
+            });
+          } else {
+            console.log("[LEAVES] Wrong network");
+            dispatch(connectFailed(`Change network to ${CONFIG.NETWORK.NAME}.`));
+          }
+        } catch (err) {
+          console.error("[LEAVES] MetaMask error:", err);
+          dispatch(connectFailed("Something went wrong: " + err.message));
         }
-      } catch (err) {
-        dispatch(connectFailed("Something went wrong."));
+      } else {
+        console.log("[LEAVES] MetaMask not found");
+        dispatch(connectFailed("Install Metamask."));
       }
-    } else {
-      dispatch(connectFailed("Install Metamask."));
+    } catch (err) {
+      console.error("[LEAVES] Connect error:", err);
+      dispatch(connectFailed("Connection error: " + err.message));
     }
   };
 };
