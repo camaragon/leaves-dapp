@@ -36,8 +36,15 @@ export const connect = () => {
     try {
       dispatch(connectRequest());
       console.log("[LEAVES] Connect wallet clicked");
-      console.log("[LEAVES] window.ethereum:", window.ethereum);
-      console.log("[LEAVES] isMetaMask:", window.ethereum?.isMetaMask);
+      
+      // Wait for ethereum to be injected (MetaMask can be slow)
+      let ethereum = window.ethereum;
+      if (!ethereum) {
+        await new Promise((resolve) => setTimeout(resolve, 500));
+        ethereum = window.ethereum;
+      }
+      console.log("[LEAVES] window.ethereum:", ethereum);
+      console.log("[LEAVES] isMetaMask:", ethereum?.isMetaMask);
       
       const abiResponse = await fetch("/config/abi.json", {
         headers: {
@@ -58,7 +65,6 @@ export const connect = () => {
       const CONFIG = await configResponse.json();
       console.log("[LEAVES] CONFIG:", CONFIG);
       
-      const { ethereum } = window;
       const metamaskIsInstalled = ethereum && ethereum.isMetaMask;
       console.log("[LEAVES] metamaskIsInstalled:", metamaskIsInstalled);
       
@@ -103,7 +109,7 @@ export const connect = () => {
         }
       } else {
         console.log("[LEAVES] MetaMask not found");
-        dispatch(connectFailed("Install Metamask."));
+        dispatch(connectFailed("MetaMask not detected. Make sure the extension is installed and enabled, then refresh the page."));
       }
     } catch (err) {
       console.error("[LEAVES] Connect error:", err);
