@@ -1,3 +1,8 @@
+import { Buffer } from "buffer";
+import process from "process/browser";
+window.Buffer = Buffer;
+window.process = process;
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
@@ -7,6 +12,7 @@ import { createTheme, ThemeProvider } from "@mui/material";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider as ReduxProvider } from "react-redux";
 import store from "./redux/store";
+import { Web3Provider } from "./Web3Provider";
 
 const theme = createTheme({
   palette: {
@@ -41,13 +47,15 @@ const theme = createTheme({
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <ReduxProvider store={store}>
-      <ThemeProvider theme={theme}>
-        <Router>
-          <App />
-        </Router>
-      </ThemeProvider>
-    </ReduxProvider>
+    <Web3Provider>
+      <ReduxProvider store={store}>
+        <ThemeProvider theme={theme}>
+          <Router>
+            <App />
+          </Router>
+        </ThemeProvider>
+      </ReduxProvider>
+    </Web3Provider>
   </React.StrictMode>
 );
 
