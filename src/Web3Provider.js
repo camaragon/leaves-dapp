@@ -1,16 +1,28 @@
 import "@rainbow-me/rainbowkit/styles.css";
-import { getDefaultWallets, RainbowKitProvider, darkTheme } from "@rainbow-me/rainbowkit";
+import { connectorsForWallets, RainbowKitProvider, darkTheme } from "@rainbow-me/rainbowkit";
+import {
+  metaMaskWallet,
+  coinbaseWallet,
+  rainbowWallet,
+  injectedWallet,
+} from "@rainbow-me/rainbowkit/wallets";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
 import { mainnet } from "wagmi/chains";
 import { publicProvider } from "wagmi/providers/public";
 
 const { chains, publicClient } = configureChains([mainnet], [publicProvider()]);
 
-const { connectors } = getDefaultWallets({
-  appName: "EDEN: Prelude",
-  projectId: "b1a2c3d4e5f6a7b8c9d0e1f2a3b4c5d6",
-  chains,
-});
+const connectors = connectorsForWallets([
+  {
+    groupName: "Popular",
+    wallets: [
+      injectedWallet({ chains }),
+      metaMaskWallet({ chains }),
+      coinbaseWallet({ appName: "EDEN: Prelude", chains }),
+      rainbowWallet({ chains }),
+    ],
+  },
+]);
 
 const wagmiConfig = createConfig({
   autoConnect: true,
