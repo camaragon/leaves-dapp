@@ -89,7 +89,7 @@ export const Header = ({
               </Styled.IconLink>
             </Stack>
           )}
-          <div style={{ margin: "1.5rem 1rem 0 0", display: "flex", justifyContent: "flex-end", alignItems: "flex-start" }}>
+          <div style={{ margin: "1.5rem 2rem 0 0", display: "flex", justifyContent: "center", alignItems: "flex-start" }}>
             {isConnected && window.location.pathname !== "/mint" ? (
               <Button variant="contained" onClick={() => navigate("/mint")}
                 sx={{ backgroundColor: "#8ED14E", width: "10rem", height: "3rem", fontWeight: "bold", fontFamily: "EB Garamond" }}>
