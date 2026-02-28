@@ -50,7 +50,3 @@ src/
 public/
   config/         # ABI and contract configuration
 ```
-
-## Related
-
-- [Leaves Smart Contract](https://github.com/camaragon/squares-nft-collection-contract) — Solidity contract source
