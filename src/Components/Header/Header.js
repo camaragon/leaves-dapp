@@ -101,7 +101,14 @@ export const Header = ({
                 Back Home
               </Button>
             ) : (
-              <ConnectButton />
+              <ConnectButton.Custom>
+                {({ openConnectModal }) => (
+                  <Button variant="contained" onClick={openConnectModal}
+                    sx={{ backgroundColor: "#8ED14E", width: "10rem", height: "3rem", fontWeight: "bold", fontFamily: "EB Garamond", color: "white" }}>
+                    Connect Wallet
+                  </Button>
+                )}
+              </ConnectButton.Custom>
             )}
           </div>
         </Styled.HeaderContainer>
@@ -124,7 +131,14 @@ export const Header = ({
                 <img height="30rem" src={discordIcon} alt="discord icon" />
               </Styled.MobileIconLink>
               <div style={{ margin: "1rem 0 0 0", display: "flex", justifyContent: "center" }}>
-                <ConnectButton />
+                <ConnectButton.Custom>
+                  {({ openConnectModal }) => (
+                    <Button variant="contained" onClick={openConnectModal}
+                      sx={{ backgroundColor: "#8ED14E", width: "272px", height: "3rem", fontWeight: "bold", fontFamily: "EB Garamond", color: "white" }}>
+                      Connect Wallet
+                    </Button>
+                  )}
+                </ConnectButton.Custom>
               </div>
             </Styled.MobileMenu>
           )}
