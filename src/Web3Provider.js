@@ -30,7 +30,10 @@ const wagmiConfig = createConfig({
   publicClient,
 });
 
+console.log("[LEAVES] Web3Provider module loaded");
+
 export const Web3Provider = ({ children }) => {
+  console.log("[LEAVES] Web3Provider rendering");
   return (
     <WagmiConfig config={wagmiConfig}>
       <RainbowKitProvider
