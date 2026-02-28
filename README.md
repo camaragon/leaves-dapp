@@ -6,6 +6,8 @@ A full-stack NFT minting dapp for the Leaves collection. 10,000 unique artist-in
 
 **Contract:** [0xdF8B4eA55C76cB8D75798E6C109401359a0D3A19](https://etherscan.io/address/0xdF8B4eA55C76cB8D75798E6C109401359a0D3A19)
 
+**OpenSea:** [10000leaves](https://opensea.io/collection/10000leaves)
+
 ## What it does
 
 Users connect their MetaMask wallet, browse the collection, and mint Leaves directly from the site. The smart contract handles minting, supply limits, and pricing on Ethereum mainnet.
