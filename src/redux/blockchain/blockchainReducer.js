@@ -1,6 +1,6 @@
 const initialState = {
   loading: false,
-  account: null,
+  account: "",
   smartContract: null,
   web3: null,
   errorMsg: "",

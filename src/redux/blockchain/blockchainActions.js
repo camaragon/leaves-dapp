@@ -34,6 +34,8 @@ const updateAccountRequest = (payload) => {
 export const connect = () => {
   return async (dispatch) => {
     dispatch(connectRequest());
+    console.log("Connect wallet clicked");
+    console.log("ethereum:", window.ethereum, "isMetaMask:", window.ethereum?.isMetaMask);
     const abiResponse = await fetch("/config/abi.json", {
       headers: {
         "Content-Type": "application/json",

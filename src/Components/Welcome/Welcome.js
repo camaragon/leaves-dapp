@@ -2,7 +2,7 @@ import { Button, Stack, Box } from "@mui/material";
 import "../../index.css";
 import * as Styled from "./Welcome.styled";
 import "./Welcome.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { connect } from "../../redux/blockchain/blockchainActions";
 import { useNavigate } from "react-router-dom";
 
