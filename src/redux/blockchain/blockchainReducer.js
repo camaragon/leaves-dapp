@@ -27,6 +27,11 @@ const blockchainReducer = (state = initialState, action) => {
         loading: false,
         errorMsg: action.payload,
       };
+    case "CLEAR_ERROR":
+      return {
+        ...state,
+        errorMsg: "",
+      };
     case "UPDATE_ACCOUNT":
       return {
         ...state,
